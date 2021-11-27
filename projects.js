@@ -84,7 +84,7 @@ const projects=[
         'link':'https://itch.io/embed-upload/4837993?color=303030',
         'type':'pico8',
         'description':[
-            'Made as a school project with Tyspoo, who helped me make the graphic and set up an installation in the school\'s library where student could compete for the high score, the goal was to make something creative based on a poem of Arthur Rimbaud\'s "Cahier de Douhais".',
+            'Made as a school project with Tyspoo, who helped me make the graphics and set up an installation in the school\'s library where student could compete for the high score, the goal was to make something creative based on a poem of Arthur Rimbaud\'s "Cahier de Douhais".',
             'Controls: Move with the arrow keys, confirm your name on highscores with C',
         ]
     },
@@ -94,6 +94,7 @@ const projects=[
         'link':'https://itch.io/embed-upload/4837996?color=303030',
         'type':'pico8',
         'description':[
+            'You are Hoggart , a young boy friend with the Iron Giant , you have to collect the 4 missing part of your friend , in order to allow him to stop the missile which threat Rockwell.',
             'An unofficial adaptation of the animated movie into a Zelda-Like game. It was my first game with a big map and a real "story".',
             'Controls: Move with the arrow keys, attack with C',
         ]
