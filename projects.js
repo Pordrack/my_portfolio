@@ -53,6 +53,9 @@ for (let project of projects) {
         }else{
             iframeSection.style.height=iframeSection.clientWidth*(dimensions[project.type].height/dimensions[project.type].width)+"px";
         }
-        window.dispatchEvent(new Event('resize'))
+
+        setInterval(function(){
+            window.dispatchEvent(new Event('resize'))
+        },16)
     })
 }
