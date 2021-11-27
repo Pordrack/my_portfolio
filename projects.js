@@ -96,7 +96,7 @@ const projects=[
         'description':[
             'You are Hoggart , a young boy friend with the Iron Giant , you have to collect the 4 missing part of your friend , in order to allow him to stop the missile which threat Rockwell.',
             'An unofficial adaptation of the animated movie into a Zelda-Like game. It was my first game with a big map and a real "story".',
-            'Controls: Move with the arrow keys, attack with C',
+            'Controls: Move with the arrow keys, attack with V',
         ]
     },
     {
