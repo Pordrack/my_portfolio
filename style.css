@@ -42,8 +42,9 @@ canvas{
 }
 
 /*On a un autre systeme de tableau si on a un écran/une fenetre petite*/
-@media (max-width:60em),(max-width: 5in) {
+@media (max-width:60em) {
   .container{
+    background-color: blue;
     grid-template-columns: 8vw 1fr 1fr 1fr 8vw;
     grid-template-areas: 
       ". banner banner banner ."
@@ -54,6 +55,7 @@ canvas{
       ". pskills pskills pskills ."
       ". skills skills skills ."
       ". interests interests interests ."
+      ". references references interests ."
       ". projects projects projects .";
   }
 }
@@ -232,8 +234,4 @@ p{
   border: 0;
   width: 100%;
   height: 100%;
-}
-
-.hideIframes .iframe-container{
-  display: none;
 }

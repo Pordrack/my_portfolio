@@ -1,5 +1,5 @@
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const dimensions={"itchioDownload":{"width":552,"height":100},
+const dimensions={"itchioDownload":{"width":552,"height":160},
 "pico8old":{"width":600,"height":600},
 "pico8now":{"width":620,"height":600}} //Stock les dimensions des differents types d'iframe
 
