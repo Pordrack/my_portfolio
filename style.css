@@ -1,0 +1,195 @@
+html, body { 
+  margin: 0;
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+  /*padding-bottom: 70vh;*/
+  /*overflow-x: hidden;*/
+}
+
+canvas{
+  position: absolute;
+  height: auto;
+  z-index: -1;
+}
+
+#mainCanva {
+  /*width: 100%;
+  height: 100%;*/
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+  background-color: #2c5237;
+}
+
+/*On commence tout ce qui est grid etc. */
+.container{
+    display: grid;
+    grid-template-columns: 12vw 1fr 1fr 1fr 1fr 1fr 12vw;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 100px;
+    margin-top: 30px;
+    grid-template-areas: 
+      ". banner banner banner banner banner ."
+      ". data data  about about about ."
+      ". experiences experiences experiences skills skills ."
+      ". education education education skills skills."
+      ". pskills pskills pskills skills skills ."
+      ". references references interests interests interests .";
+}
+
+/*On a un autre systeme de tableau si on a un écran/une fenetre petite*/
+@media (max-width:60em),(max-width: 5in) {
+  .container{
+    grid-template-columns: 8vw 1fr 1fr 1fr 8vw;
+    grid-template-areas: 
+      ". banner banner banner ."
+      ". data data data ."
+      ". about about about ."
+      ". experiences experiences experiences ."
+      ". education education education ."
+      ". pskills pskills pskills ."
+      ". skills skills skills ."
+      ". interests interests interests ."
+      ". references references references .";
+  }
+}
+
+/*Pour tout en bas, sert à avoir du vide pour pouvoir observer l'océan/toujours avec du contenu scrollable*/
+.whitespace{
+  width:100%;
+  height: 70vh;
+}
+
+/*Les grosses colonnes avec toutes les planches*/
+.woodboard{
+  display: block;
+  /*background-color: rgba(255,0,0,0.5);*/
+  /*height: fit-content;*/
+  align-self: start;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 3%;
+  padding-bottom: 4%;
+  color: rgba(240,240,240,0.9);
+}
+
+/*On fait la mini grid pour les personals data*/
+.pdGrid{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1px 15%  1fr;
+  grid-template-rows: auto;
+  column-gap: 3px;
+  row-gap: 5px;
+}
+
+.centeredElement{
+  margin: auto;
+  text-align: center;
+}
+
+.sectionTitle{
+  margin-bottom: 5%;
+  margin-left: 5px;
+}
+
+.background{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  top:-100%;
+  z-index: 1;
+}
+
+.icon{
+  width: 100%;
+  max-width: 40px;
+  height: auto;
+}
+
+.mail{
+  white-space: pre-line;
+  word-break: break-all;
+}
+
+h2{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  align-self: center;
+  text-shadow: 0 0 0.2em rgba(0,0,0,0.6);
+  color:rgba(0,0,0,0.5)
+}
+
+h1{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  align-self: center;
+  text-shadow: 0 0 0.2em rgba(0,0,0,0.6);
+  color:rgba(0,0,0,0.5)
+  /*color:rgba(70, 149, 240,0.8);
+  text-shadow: 0 0 0.2em rgba(70, 149, 240,0.9)*/
+}
+
+h3{
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+h4{
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align:justify;
+  font-weight: normal;
+  font-family: 'Nunito', sans-serif;
+}
+
+/*Tout ce qui a attrait a la section skill*/
+#skills{
+  display:flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.skillTitleBoard{ /* le titre de la section skill, enfin son board*/
+  display:flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  min-height: 7%;
+}
+
+.skillSectionBoard{
+  align-self: stretch;
+  margin-bottom: 30px;
+}
+
+/*Les barre de competence en particulier*/
+.barBackground{
+  background-color: #2c5237;
+  width: 90%;
+}
+
+.barLevel{
+  text-align: right;
+	transition: all 0.5s ease;
+	width: 0%;
+	display: inline-block;
+	background-color: rgba(68, 149, 242,0.7);
+  box-shadow: 0 0 0.2em rgba(68, 149, 242,0.7);
+  color: rgba(0,0,0,0.8);
+}

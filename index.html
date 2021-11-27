@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunit&family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <canvas id='mainCanva'>
+        Sorry, it seems your browser cannot display canvas :/
+    </canvas>
+    <!--La grid qui contient tout le site-->
+    <div class='container'>
+        <div class='woodboard' style='grid-area: banner;'>
+            <h1 class="centeredElement">Jérémy Auclair</h1>
+            <h2 class="centeredElement">Developer and aspiring game designer</h2>
+        </div>
+
+        <div class='woodboard' style='grid-area: data;'>
+            <h2 class='sectionTitle'>Personal data</h2>
+            <div class='pdGrid'>
+                <img src='img/birthdayIcon.png' class='icon' style="grid-column-start: 2;grid-row-start: 1;">
+                <p style="grid-column-start: 3;grid-row-start: 1;">Jul. 4, 2002</p>
+                <img src='img/mailIcon.png' class='icon' style="grid-column-start: 2;grid-row-start: 4;">
+                <p class="mail" style="grid-column-start: 3;grid-row-start: 4;">jeremy.auclair@etu.univ-smb.fr</p>
+            </div>
+        </div>
+
+        <div class='woodboard' style='grid-area: about;'>
+            <h2 class='sectionTitle'>About me</h2>
+            <p>I'm a young developer eager to contribute to computer science and video game development during an internship. I am a passionate worker and will be able to work quickly and efficiently. I can quickly train to new libraries, frameworks, languages and so on. So I will be able to adapt to a high workflow within a few days.  I know how to take initiatives, and can work with or without a leader or a team.</p> 
+            <p>I will bring my energy to a company. </p>
+        </div>
+
+        <div class='woodboard' style='grid-area: experiences;'>
+            <h2 class='sectionTitle'>Experiences</h2>
+            <h3>May 2021 - June 2022</h3>
+            <h3>Building a video game for Mr. Paul Lhamy, using Unity.</h3>
+            <p>&emsp;Coding movements algorithms, building the network structure of the multiplayer mode, building scenes using Unity Editor, integrating Steam features.</p>
+            <h3 style='margin-top:5%'>Since May 2021</h3>
+            <h3>Odin (the Students Union Office of the informatic section of the IUT Annecy), Treasurer</h3>
+            <p>&emsp;Accounting, managing supplies, organazing events, communicating with commercial partners, taking clients orders, guiding younger sudents.</p>
+        </div>
+
+        <div class='woodboard' style='grid-area: education;'>
+            <h2 class='sectionTitle'>Education</h2>
+            <h3>2022 - DUT informatique (2-year university diploma in computer science)</h3>
+            <p>&emsp;IUT Annecy - Annecy-le-Vieux, France</p>
+            <h3 style='margin-top:5%'>2020 - French Baccalaureate S-SI (High School diploma
+                specialized in science and computer engineering) 
+                with high honors</h3>
+            <p>&emsp;Charles-Poncet High School - Cluses, France</p>
+        </div>
+
+        <div id="skills" style='grid-area: skills;'>
+            <div class='woodboard skillTitleBoard'><h1>Technical skills</h1></div>
+        </div>
+
+        <div class='woodboard' style='grid-area: pskills;'>
+            <h2 class='sectionTitle'>Personal skills</h2>
+            <p>I manage my time well and can concentrate on multiple projects at one. I am self-directed and able to take initiative. I like when things go fast, I can work quickly and efficiently.</p> 
+        </div>
+
+        <div class='woodboard' style='grid-area: interests;'>
+            <h2 class='sectionTitle'>Interests</h2>
+            <p>I like to play video games. Big video games, like MMORPG or popular survival games. But also indie games because they often try something different, they find risky mechanics and go with them, for better or for worse. Or retro games, such as Atari 2600 ones, because from limitation emerge creativity.</p>
+            <p>Another part of video games I like is making them, I made a lot of small games in high school, as you can see down below, including some for game jams, small events where you have a limited time to create a game answering constraints (a given theme, limitations etc.)</p>
+        </div>
+
+        <div class='woodboard' style='grid-area: references;'>
+            <h2 class='sectionTitle'>References</h2>
+            <h3>Stephanie Bouchon</h3>
+            <p>&emsp;English Teacher</p>
+            <p>&emsp;IUT - Annecy</p>
+            <p>&emsp;stephanie.bouchon@univ-smb.fr</p>
+            <h3 style='margin-top:5%'>Nathalie Gruson</h3>
+            <p>&emsp;Programmation Teacher</p>
+            <p>&emsp;IUT - Annecy</p>
+            <p>&emsp;stephanie.bouchon@univ-smb.fr</p>
+        </div>
+    </div>
+    <div class="whitespace">
+    </div>
+    
+    <script src='skills.js'></script>
+    <script src='main.js'></script>
+</body>
+</html>
