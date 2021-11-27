@@ -116,6 +116,20 @@ canvas{
   word-break: break-all;
 }
 
+a{
+  text-shadow: 0 0 0.2em rgba(0,0,0,0.6);
+  color:rgba(0,0,0,0.5);
+  text-decoration: none;
+  margin-left:auto;
+  margin-right: auto;
+  margin:0 auto;
+  font-weight: 800;
+}
+
+a:visited {
+
+}
+
 h2{
   margin-top: 0px;
   margin-bottom: 0px;
@@ -157,20 +171,20 @@ p{
   font-family: 'Nunito', sans-serif;
 }
 
-/*Tout ce qui a attrait a la section skill*/
-#skills{
-  display:flex;
-  flex-direction: column;
-  justify-content: start;
-}
-
-.skillTitleBoard{ /* le titre de la section skill, enfin son board*/
+.titleBoard{ /* les planches faites pour contenir un seul titre/text, comme le titre skills*/
   display:flex;
   align-self: stretch;
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
   min-height: 7%;
+}
+
+/*Tout ce qui a attrait a la section skill*/
+#skills{
+  display:flex;
+  flex-direction: column;
+  justify-content: start;
 }
 
 .skillSectionBoard{
