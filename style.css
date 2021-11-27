@@ -68,8 +68,8 @@ canvas{
 /*Les grosses colonnes avec toutes les planches*/
 .woodboard{
   display: block;
-  background-color: rgba(255,0,0,0.5);
   /*height: fit-content;*/
+  position: relative;
   transition: all 0.5s ease;
   overflow-y:hidden;
   align-self: start;
@@ -181,7 +181,7 @@ p{
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  min-height: 7%;
+  min-height: 4vw;
 }
 
 /*Tout ce qui a attrait aux skill et projets*/
@@ -212,6 +212,23 @@ p{
   color: rgba(0,0,0,0.8);
 }
 
+/*Classes relatives aux projets*/
+.description{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.flipper{ /*Le petit machin fleche qui sert a deployer/ranger le contenu*/
+  width:5%;
+  height:auto;
+  position:absolute;
+  top:2vw;
+  left:2vw;
+  transition: all 0.5s ease;
+  pointer-events: none;
+  transform:rotate(-180deg);
+}
+
 /*Classe nescessaire aux iframes responsives*/
 /*Copié collé de https://stackoverflow.com/questions/17838607/making-an-iframe-responsive*/
 .iframe-container {
@@ -232,4 +249,18 @@ p{
 
 .hideIframes .iframe-container{
   display: none;
+}
+
+.hideIframes .description{
+  display: none;
+}
+
+.hideIframes .flipper{
+  transform:rotate(0deg);
+}
+
+#projects .woodboard{
+  padding-top:1%;
+  padding-bottom: 1%;
+  margin-bottom: 2%;
 }

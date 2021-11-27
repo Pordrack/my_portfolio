@@ -392,7 +392,8 @@ function Background(node){
                 //Truc pour rescale 
                 localCtx.save();
                 localCtx.translate(0.5*imageWidth,i*plankHeight+0.5*heightTargeted*factorOfSize);
-                localCtx.scale(xInvertFactor, yInvertFactor);
+                //Desactivé l'inversion pour les rappels de resize (eviter que les encoches bougent)
+                /*localCtx.scale(xInvertFactor, yInvertFactor);*/
                 //On dessine alors les 2 moitiers de planches
                 localCtx.drawImage(image, 0, image.height-heightTargeted,0.5*widthTargeted+1,heightTargeted+1,-0.5*imageWidth,-0.5*heightTargeted*factorOfSize, 0.5*imageWidth+1, heightTargeted*factorOfSize+1);
                 localCtx.drawImage(image, image.width-0.5*widthTargeted, image.height-heightTargeted,0.5*widthTargeted+1,heightTargeted+1,0,-0.5*heightTargeted*factorOfSize,0.5*imageWidth+1, heightTargeted*factorOfSize+1);
@@ -541,12 +542,25 @@ window.addEventListener("load",function() {
             width=canvas.width;
             height=canvas.height;
             
-            //On appel la fonction a declenché sur le resize de chaque fond, après un petit temps pour que tout sois bien
+            //On appel la fonction a declenché sur le resize de chaque fond
+            for (const pb of plankBackgrounds) {
+                pb.onResize();
+            }
+            //On la rappelle après un petit temps pour que tout sois bien
             setTimeout(function(){
                 for (const pb of plankBackgrounds) {
                     pb.onResize();
                 }
-            },100)               
+            },300)         
+            
+            //On la rappelle après un petit temps pour que tout sois VRAIMENT bien
+            setTimeout(function(){
+                for (const pb of plankBackgrounds) {
+                    pb.onResize();
+                }
+            },600)
+            
+            //Sans tous ces rappels : petit decalage possible
         })
     })   
     
