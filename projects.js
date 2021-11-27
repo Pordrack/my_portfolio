@@ -1,5 +1,7 @@
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const dimensions={"itchioDownload":{"width":552,"height":100}} //Stock les dimensions des differents types d'iframe
+const dimensions={"itchioDownload":{"width":552,"height":100},
+"pico8old":{"width":600,"height":600},
+"pico8now":{"width":620,"height":600}} //Stock les dimensions des differents types d'iframe
 
 const projectBox=document.querySelector('#projects')
 const projects=[
@@ -29,11 +31,13 @@ for (let project of projects) {
     title.classList.add("centeredElement");
     projectBoard.appendChild(title);
 
+    /*Section qui va être réduite/agrandie pour afficher/cacher la boite*/
     let iframeSection=document.createElement("div");
     iframeSection.classList.add("iframe-section");
     iframeSection.classList.add("closedSection");
     projectBoard.appendChild(iframeSection);
     
+    /*Respecte la structure que j'ai trouvé sur internet, qui permet d'avoir un iframe bien responsibe*/
     let iframeContainer=document.createElement("div");
     iframeContainer.classList.add("iframe-container");
     iframeContainer.style.paddingTop=(100*(dimensions[project.type].height/dimensions[project.type].width))+"%";
@@ -53,9 +57,17 @@ for (let project of projects) {
         }else{
             iframeSection.style.height=iframeSection.clientWidth*(dimensions[project.type].height/dimensions[project.type].width)+"px";
         }
-
-        setInterval(function(){
-            window.dispatchEvent(new Event('resize'))
-        },16)
     })
 }
+
+/*Quand la fenetre est resize il faut changer la taille les flexbox*/
+window.addEventListener("resize",function(){
+    iframeSections=document.querySelectorAll(".iframe-section");
+    for (let iframeSection of iframeSections) {
+        if(iframeSection.classList.contains("closedSection")){
+            iframeSection.style.height="0px";
+        }else{
+            iframeSection.style.height=iframeSection.clientWidth*(dimensions[project.type].height/dimensions[project.type].width)+"px";
+        } 
+    }
+})

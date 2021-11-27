@@ -359,7 +359,7 @@ function Background(node){
                 let widthTargeted=imageWidth/factorOfSize;
                 let heightTargeted=plankHeight/factorOfSize;
                 
-                //J'ai laissé le code mais en fait j'en fait rien, oubliez
+                //J'ai desactivé le code parce que avec le smooth resize des projets ça faisait moche
                 //On va aleatoire inverser verticalement ou nom chaque planche, pour plus de varieté
                 let xInvertFactor=getRandomInt(0,2)*2-1 //Genere -1 ou 1
                 let yInvertFactor=getRandomInt(0,2)*2-1 
@@ -392,7 +392,8 @@ function Background(node){
                 //Truc pour rescale 
                 localCtx.save();
                 localCtx.translate(0.5*imageWidth,i*plankHeight+0.5*heightTargeted*factorOfSize);
-                localCtx.scale(xInvertFactor, yInvertFactor);
+                //J'ai desactivé le code parce que avec le smooth resize des projets ça faisait moche
+                /*localCtx.scale(xInvertFactor, yInvertFactor);*/
                 //On dessine alors les 2 moitiers de planches
                 localCtx.drawImage(image, 0, image.height-heightTargeted,0.5*widthTargeted+1,heightTargeted+1,-0.5*imageWidth,-0.5*heightTargeted*factorOfSize, 0.5*imageWidth+1, heightTargeted*factorOfSize+1);
                 localCtx.drawImage(image, image.width-0.5*widthTargeted, image.height-heightTargeted,0.5*widthTargeted+1,heightTargeted+1,0,-0.5*heightTargeted*factorOfSize,0.5*imageWidth+1, heightTargeted*factorOfSize+1);
@@ -521,6 +522,13 @@ window.addEventListener("load",function() {
             mainBoat.onScroll();
         }); 
 
+        //On la trigger aussi si le site se fait resize (deploiement d'onglet projet)
+        const boatResize_ob = new ResizeObserver(function(entries) {
+            mainBoat.onScroll()
+        });
+        
+        boatResize_ob.observe(document.querySelector(".container"));
+
         mainBoat.onScroll()
     })
     
@@ -546,8 +554,17 @@ window.addEventListener("load",function() {
                 for (const pb of plankBackgrounds) {
                     pb.onResize();
                 }
-            },100)               
+            },100)       
         })
+
+        //On la trigger aussi si le site se fait resize (deploiement d'onglet projet)
+        const bgResize_ob = new ResizeObserver(function(entries) {
+            for (const pb of plankBackgrounds) {
+                pb.onResize();
+            }
+        });
+        
+        bgResize_ob.observe(document.querySelector(".container"));
     })   
     
     window.addEventListener("mousemove",function(event){
