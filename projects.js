@@ -1,5 +1,5 @@
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const dimensions={"itchioDownload":{"width":552,"height":100}} //Stock les dimensions des differents types d'iframe
+const dimensions={"itchioDownload":{"width":552,"height":160}} //Stock les dimensions des differents types d'iframe
 
 const projectBox=document.querySelector('#projects')
 const projects=[
@@ -41,10 +41,9 @@ for (let project of projects) {
 
     projectBox.appendChild(projectBoard);
 
-    projectBoard.style.maxHeight=projectBoard.clientHeight+"px";
     projectBoard.addEventListener("click",function(event){
         event.target.classList.toggle("hideIframes");
-        event.target.style.maxHeight=event.target.clientHeight+"px";
+        window.dispatchEvent(new Event('resize'));
     })
     
     
