@@ -85,7 +85,7 @@ for (let category of categories) {
     //Pour chaque catégorie, on créé un panneau 
     let skillBoard=document.createElement("div");
     skillBoard.classList.add("woodboard");
-    skillBoard.classList.add("skillSectionBoard");
+    skillBoard.classList.add("sectionBoard");
     //Avec son titre a l'interieur
     let h2=document.createElement("h2")
     h2.innerHTML=category.name;
@@ -112,7 +112,6 @@ for (let category of categories) {
         /*barLevel.style.width=skill.level+"%";*/
     }
     skillBox.appendChild(skillBoard);
-    skillBox.appendChild(skillBoard);
 }
 
 window.addEventListener("scroll",function(){
@@ -121,11 +120,9 @@ window.addEventListener("scroll",function(){
     for (let category of categories) {
         for (let skill of category.skills) {
             if(isInViewport(skill.node) && skill.displayLevel==0){
-                console.log("yoyo");
                 skill.displayLevel=skill.level;
                 skill.node.style.width=skill.level+"%";
             }else if(!isInViewport(skill.node) && skill.displayLevel!=0){
-                console.log("yaya");
                 skill.displayLevel=0;
                 skill.node.style.width=0;
             }
