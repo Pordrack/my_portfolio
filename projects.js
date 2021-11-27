@@ -1,6 +1,8 @@
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const dimensions={"itchioDownload":{"width":552,"height":160},
-"pico8":{"width":1920,"height":1080}} //Stock les dimensions des differents types d'iframe
+"pico8":{"width":1920,"height":1080},
+"website":{"width":1,"height":0.6}
+} //Stock les dimensions des differents types d'iframe
 
 
 
@@ -66,15 +68,80 @@ const projects=[
         'type':'itchioDownload',
     },
     {
-        'name':'An Endless Search',
+        'name':'[Website] Le fil rouge des bloods',
+        'date':'2019-04-18',
+        'link':'https://pordrack.github.io/Le-fil-rouge-des-bloods/',
+        'showLink':true,
+        'type':'website',
+        'description':[
+            'A website regrouping work of art from the different members of a Discord I was on. They all have something in common: a red string',
+            'It was my first real website, and my first "collaborative" project outside school, it was a lot of fun although a bit stressful as it was my first time as a kind of "project leader". The HTML/CSS of this website is not my best work.'
+        ]
+    },
+    {
+        'name':'Ophélie',
+        'date':'2019-04-01',
+        'link':'https://itch.io/embed-upload/4837993?color=303030',
+        'type':'pico8',
+        'description':[
+            'Made as a school project with Tyspoo, who helped me make the graphic and set up an installation in the school\'s library where student could compete for the high score, the goal was to make something creative based on a poem of Arthur Rimbaud\'s "Cahier de Douhais".',
+            'Controls: Move with the arrow keys, confirm your name on highscores with C',
+        ]
+    },
+    {
+        'name':'The Iron Giant: The Adventure Game',
         'date':'2019-02-01',
-        'link':'https://www.lexaloffle.com/bbs/widget.php?pid=growingdarkness',
+        'link':'https://itch.io/embed-upload/4837996?color=303030',
+        'type':'pico8',
+        'description':[
+            'An unofficial adaptation of the animated movie into a Zelda-Like game. It was my first game with a big map and a real "story".',
+            'Controls: Move with the arrow keys, attack with C',
+        ]
+    },
+    {
+        'name':'Growing darkness',
+        'date':'2019-02-01',
+        'link':'https://itch.io/embed-upload/4837871?color=303030',
         'type':'pico8',
         'description':[
             'You have to retrieve the Solar Orb , in order to repair the sun , but beware Darknesses, before they grow and block every possible path.',
-            'Controls: Move with the arrow keys, run with C, blink forwar with V.'
+            'Controls: Move with the arrow keys, run with C, blink forward with V.',
             'This game was made in a couple of days as a challenge with a friend: we both had to make a "rage" game about darkness.'
         ]
+    },
+    {
+        'name':'Light the Match',
+        'date':'2019-02-01',
+        'link':'https://itch.io/embed/372012?dark=true',
+        'type':'itchioDownload',
+    },
+    {
+        'name':'Offline T-Rex Game : Pico 8 Demake',
+        'date':'2019-01-01',
+        'link':'https://itch.io/embed-upload/4837922?color=303030',
+        'type':'pico8',
+        'description':[
+            'A little demake of Chromium and Chrome\'s T-Rex game',
+            'Controls: Duck with the down arrow, jump with V or the up arrow, and switch between color and black and white with V',
+        ]
+    },
+    {
+        'name':'Vampire Stakes',
+        'date':'2018-12-01',
+        'link':'https://itch.io/embed/345965?dark=true',
+        'type':'itchioDownload',
+    },
+    {
+        'name':'The Legend of Karnia: Shadow\'s return',
+        'date':'2018-10-01',
+        'link':'https://itch.io/embed/321699?dark=true',
+        'type':'itchioDownload',
+    },
+    {
+        'name':'Pipo the shooting star',
+        'date':'2018-9-01',
+        'link':'https://itch.io/embed/317350?dark=true',
+        'type':'itchioDownload',
     },
 ]
 
@@ -125,6 +192,20 @@ for (let project of projects) {
             projectBoard.appendChild(p);
         }
     }
+
+    //On rajoute eventuellement le lien direct
+    if(project.showLink){
+        let div=document.createElement("div");
+        div.classList.add("centeredElement");
+        div.classList.add("link");
+        let a=document.createElement("a");
+        a.href=project.link
+        a.target="_blank"
+        a.innerHTML="Click here to see the project in a new tab"
+        div.appendChild(a);
+        projectBoard.appendChild(div);
+    }
+
     projectBox.appendChild(projectBoard);
 
     //Quand on clique, on cache/montre le parag et les images

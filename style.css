@@ -259,6 +259,10 @@ p{
   transform:rotate(0deg);
 }
 
+.hideIframes .link{
+  display: none;
+}
+
 #projects .woodboard{
   padding-top:1%;
   padding-bottom: 1%;
