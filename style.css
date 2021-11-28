@@ -14,7 +14,7 @@ html, body {
   left: 1vw;
   height:4vw;
   width: auto;
-  transform: rotate(180deg);
+  transform: rotate(-180deg);
   cursor: pointer;
   transition: all 0.5s ease;
 }
