@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunit&family=Raleway:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <div id="menu">
+        <a href="#pd"><span>Personal data</span></a>
+    </div>
     <canvas id='mainCanva'>
         Sorry, it seems your browser cannot display canvas :/
     </canvas>
@@ -20,7 +23,7 @@
         </div>
 
         <div class='woodboard' style='grid-area: data;'>
-            <h2 class='sectionTitle'>Personal data</h2>
+            <h2 class='sectionTitle' id="pd">Personal data</h2>
             <div class='pdGrid'>
                 <img src='img/birthdayIcon.png' class='icon' style="grid-column-start: 2;grid-row-start: 1;">
                 <p style="grid-column-start: 3;grid-row-start: 1;">Jul. 4, 2002</p>
@@ -92,8 +95,9 @@
     </div>
     <div class="whitespace"></div>
     
+    <script src='mainCanva.js'></script>
     <script src='skills.js'></script>
     <script src='projects.js'></script>
-    <script src='main.js'></script>
+    <script src='backgrounds.js'></script>
 </body>
 </html>
