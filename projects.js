@@ -123,7 +123,7 @@ const projects=[
         'type':'pico8',
         'description':[
             'A little demake of Chromium and Chrome\'s T-Rex game',
-            'Controls: Duck with the down arrow, jump with V or the up arrow, and switch between color and black and white with V',
+            'Controls: Duck with the down arrow, jump with V or the up arrow, and switch between color and black and white with C',
         ]
     },
     {
