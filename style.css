@@ -2,8 +2,70 @@ html, body {
   margin: 0;
   height: 100%;
   font-family: 'Raleway', sans-serif;
+  scroll-behavior: smooth;
   /*padding-bottom: 70vh;*/
   /*overflow-x: hidden;*/
+}
+
+/*Le menu pour naviguer*/
+#menuFlipper{
+  position:fixed;
+  top:2vw;
+  left: 1vw;
+  height:4vw;
+  width: auto;
+  transform: rotate(180deg);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#menuFlipper.flipped{
+  transform: rotate(0deg);
+}
+
+#menu{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 7vw;
+  /*background-color: brown;*/
+  left: 0vw;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+#menu.hidden{
+  left: -20vw;
+}
+
+#menu a{
+  margin-top: 2%;
+  margin-left: 0px;
+  margin-bottom: 2%;
+}
+
+#menu div{
+  position: relative;
+  margin-left: 0px;
+  background-size: auto 100%;
+  background-image: url("img/flag.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  transition: all 0.1s ease;
+}
+
+#menu div h2{
+  display:flex;
+  white-space: nowrap;
+  font-size: medium;
+  margin-left: 10%;
+  padding-right: 2em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+#menu div:hover{
+  padding-left: 2vw;
 }
 
 canvas{
@@ -267,4 +329,9 @@ p{
   padding-top:1%;
   padding-bottom: 1%;
   margin-bottom: 2%;
+  cursor: pointer;
+}
+
+#projects .woodboard.hideIframes{
+  cursor: pointer;
 }

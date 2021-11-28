@@ -9,8 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunit&family=Raleway:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <img id="menuFlipper" src='img/flipperOnWood.png'>
     <div id="menu">
-        <a href="#pd"><span>Personal data</span></a>
+        <a href="#pd"><div><h2>Personal data</h2></div></a>
+        <a href="#about"><div><h2>About me</h2></div></a>
+        <a href="#experiences"><div><h2>Experiences</h2></div></a>
+        <a href="#education"><div><h2>Education</h2></div></a>
+        <a href="#skills"><div><h2>Technical skills</h2></div></a>
+        <a href="#pskills"><div><h2>Personal skills</h2></div></a>
+        <a href="#interests"><div><h2>Interests</h2></div></a>
+        <a href="#references"><div><h2>References</h2></div></a>
+        <a href="#projects"><div><h2>My projects</h2></div></a>
     </div>
     <canvas id='mainCanva'>
         Sorry, it seems your browser cannot display canvas :/
@@ -36,13 +45,13 @@
         </div>
 
 
-        <div class='woodboard' style='grid-area: about;'>
+        <div class='woodboard' id="about" style='grid-area: about;'>
             <h2 class='sectionTitle'>About me</h2>
             <p>I'm a young developer eager to contribute to computer science and video game development during an internship. I am a passionate worker and will be able to work quickly and efficiently. I can quickly train to new libraries, frameworks, languages and so on. So I will be able to adapt to a high workflow within a few days.  I know how to take initiatives, and can work with or without a leader or a team.</p> 
             <p>I will bring my energy to a company. </p>
         </div>
 
-        <div class='woodboard' style='grid-area: experiences;'>
+        <div class='woodboard' id="experiences" style='grid-area: experiences;'>
             <h2 class='sectionTitle'>Experiences</h2>
             <h3>May 2021 - June 2022</h3>
             <h3>Building a video game for Mr. Paul Lhamy, using Unity.</h3>
@@ -52,7 +61,7 @@
             <p>&emsp;Accounting, managing supplies, organazing events, communicating with commercial partners, taking clients orders, guiding younger sudents.</p>
         </div>
 
-        <div class='woodboard' style='grid-area: education;'>
+        <div class='woodboard' id="education" style='grid-area: education;'>
             <h2 class='sectionTitle'>Education</h2>
             <h3>2022 - DUT informatique (2-year university diploma in computer science)</h3>
             <p>&emsp;IUT Annecy - Annecy-le-Vieux, France</p>
@@ -66,18 +75,18 @@
             <div class='woodboard titleBoard'><h1>Technical skills</h1></div>
         </div>
 
-        <div class='woodboard' style='grid-area: pskills;'>
+        <div class='woodboard' id="pskills" style='grid-area: pskills;'>
             <h2 class='sectionTitle'>Personal skills</h2>
             <p>I manage my time well and can concentrate on multiple projects at one. I am self-directed and able to take initiative. I like when things go fast, I can work quickly and efficiently.</p> 
         </div>
 
-        <div class='woodboard' style='grid-area: interests;'>
+        <div class='woodboard' id ="interests" style='grid-area: interests;'>
             <h2 class='sectionTitle'>Interests</h2>
             <p>I like to play video games. Big video games, like MMORPG or popular survival games. But also indie games because they often try something different, they find risky mechanics and go with them, for better or for worse. Or retro games, such as Atari 2600 ones, because from limitation emerge creativity.</p>
             <p>Another part of video games I like is making them, I made a lot of small games in high school, as you can see down below, including some for game jams, small events where you have a limited time to create a game answering constraints (a given theme, limitations etc.)</p>
         </div>
 
-        <div class='woodboard' style='grid-area: references;'>
+        <div class='woodboard' id="interests" style='grid-area: references;'>
             <h2 class='sectionTitle'>References</h2>
             <h3>Stephanie Bouchon</h3>
             <p>&emsp;English Teacher</p>
@@ -89,12 +98,13 @@
             <p>&emsp;stephanie.bouchon@univ-smb.fr</p>
         </div>
 
-        <div id="projects" class='sectionFlexbox' style='grid-area: projects;'>
+        <div id="projects" id="projects" class='sectionFlexbox' style='grid-area: projects;'>
             <div class='woodboard titleBoard'><h1>My projects</h1></div>
         </div>
     </div>
     <div class="whitespace"></div>
     
+    <script src='menuFlipper.js'></script>
     <script src='mainCanva.js'></script>
     <script src='skills.js'></script>
     <script src='projects.js'></script>
