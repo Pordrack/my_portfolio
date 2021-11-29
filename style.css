@@ -139,6 +139,7 @@ canvas{
   padding-left: 5%;
   padding-top: 3%;
   padding-bottom: 4%;
+  min-height: 4vw;
   color: rgba(240,240,240,0.9);
 }
 
@@ -243,7 +244,6 @@ p{
   align-items: center;
   justify-content: center;
   margin-bottom: 30px;
-  min-height: 4vw;
 }
 
 /*Tout ce qui a attrait aux skill et projets*/
