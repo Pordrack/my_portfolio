@@ -6,6 +6,35 @@ html, body {
   /*padding-bottom: 70vh;*/
   /*overflow-x: hidden;*/
 }
+/* La gestion de la clé caché pour la chasse au trésor*/
+/*Des variables que le JS definira et qui serviront pour la classe "cachée" de la clé*/
+:root {
+  /*La position de la clé quand caché, là d'ou elle doit partir quand trouvée*/
+  --hiddenKeyLeft: 0px;
+  --hiddenKeyTop:0px;
+}
+
+#keysprite{
+  position: fixed;
+  height:4.2vw;
+  width: auto;
+  right:1vw;
+  top:2vw;
+  left:auto;
+  transition: all 0.5s ease;
+  z-index: 999;
+  pointer-events: none;
+}
+
+
+/*La clé caché, invisible, minuscule, postée "sur la lettre" qui la revelera*/
+#keysprite.hidden{
+  position: fixed;
+  right:var(--hiddenKeyRight);
+  top:var(--hiddenKeyTop);
+  height: 0px;
+  transition: none;
+}
 
 /*Le menu pour naviguer*/
 #menuFlipper{

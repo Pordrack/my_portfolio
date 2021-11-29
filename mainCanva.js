@@ -258,7 +258,7 @@ function Boat(wave,size,image,center){
         let boatWidth=sizeFactor*this.baseWidth;
         let y=this.wave.getY(this.x);
         let angle=this.wave.getAngle(this.x);
-
+        
         //On modifie le scaleX en fonction du retournement si nescessaire, de maniere progressive
         if(this.scaleX>-1 && this.flipped){
             this.scaleX-=dT/100;
@@ -279,12 +279,12 @@ function Boat(wave,size,image,center){
         ctx.drawImage(this.image,-center*boatWidth,-0.95*boatHeight, boatWidth, boatHeight);
         ctx.restore();
     }
-
+    
     //Se déplace sur la mer en fonction du scroll
     this.onScroll=function(){
         let sizeFactor=((size/100)*width)/this.baseWidth
         let boatWidth=sizeFactor*this.baseWidth;
-
+        
         if(window.scrollY<this.lastScroll){
             this.flipped=true;
         }else{
@@ -316,114 +316,114 @@ function setHertz() {
     return Math.round(spd * 1000) / 1000;
 }
 
-window.addEventListener("load",function() {
-    const canvas = document.querySelector('canvas');
-    ctx = canvas.getContext('2d');
+
+const canvas = document.querySelector('canvas');
+ctx = canvas.getContext('2d');
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+width=canvas.width;
+height=canvas.height;
+//On change les FPS en fonction de la puissance de calcul, on attend la fin du chargement de tout le bazar en JS pour des resultats accurate
+//Update c'était buggé, j'ai enlevé
+/*setTimeout(function(){
+    const power=setHertz();
+    if(power<10){
+        console.log("dT avant "+dT);
+        dT*=(10/power);
+        if(dT<0 || dT>100)
+        dT=100
+        console.log("dT après "+dT);
+    };
+},500)*/
+
+let waves=[
+    new Wave(2,"#102a63",7/8,70/13.66,3/13.66,0.000025),
+    new Wave(2,"teal",7/8,45/13.66,5/13.66,0.00025),
+    new Wave(2,"#4495f2",71/80,35/13.66,4/13.66,0.0004)
+]
+
+let bolts=[];
+function newBolt(forcedOnMouse){
+    //On créé un nouvel éclair avec des coordonnées au pif 
+    x1=getRandomInt(0,width);
+    x2=x1+getRandomInt(-0.1*width,0.1*width);
+    y1=0;
+    y2=(78/80)*height;
+    //L'arrivée est la souris dans certains cas
+    if(forcedOnMouse==true || (getRandomInt(0,100)>90)){
+        x2=mouseX;
+        y2=mouseY;
+    }
     
+    //On evite de faire trop d'éclairs sinon ça lag, et on créé pas d'éclair si le mec regarde pas
+    if(bolts.length<5 && !document.hidden){
+        new Bolt(x1,y1,x2,y2,getRandomInt(800,1200),4,bolts,3,false);
+    }   
+    
+    //Puis on appel à la création d'un nouveau éclair, si ce n'est pas un éclair 'd'origine humaine'
+    if(forcedOnMouse==false){
+        setTimeout(function(){
+            newBolt(false);
+        },getRandomInt(minTimeBetweenBolts,maxTimeBetweenBolts));
+    }
+}
+
+setTimeout(function(){
+    newBolt(false);
+},getRandomInt(minTimeBetweenBolts,maxTimeBetweenBolts))
+
+//On charge l'image du bateau, et pause tout le temps de la charger
+boatImage=new Image();
+boatImage.src="img/pirateShip.png";
+boatImage.addEventListener("load",function(){
+    let mainBoat=new Boat(waves[1],10,boatImage,0.34)
+    setInterval(function () {
+        ctx.clearRect(0,0,width,height);
+        
+        for(let bolt of bolts){
+            bolt.update();
+        }
+        
+        for (let wave of waves) {
+            if(wave==mainBoat.wave){
+                mainBoat.update();
+            }
+            wave.update();
+        }  
+    },dT)
+    
+    //On appel les fonctions qui font bouger le bateau quand nescessaire
+    window.addEventListener("scroll",function(){
+        mainBoat.onScroll();
+    }); 
+    
+    window.addEventListener("resize",function(){
+        mainBoat.onScroll();
+    }); 
+    
+    mainBoat.onScroll()
+})
+
+//On s'assure que tout soit toujours aux bonne dimension pour la page
+window.addEventListener("resize",function(event){
     canvas.width=window.innerWidth;
     canvas.height=window.innerHeight;
     width=canvas.width;
     height=canvas.height;
-    //On change les FPS en fonction de la puissance de calcul, on attend la fin du chargement de tout le bazar en JS pour des resultats accurate
-    //Update c'était buggé, j'ai enlevé
-    /*setTimeout(function(){
-        const power=setHertz();
-        if(power<10){
-            console.log("dT avant "+dT);
-            dT*=(10/power);
-            if(dT<0 || dT>100)
-            dT=100
-            console.log("dT après "+dT);
-        };
-    },500)*/
-    
-    let waves=[
-        new Wave(2,"#102a63",7/8,70/13.66,3/13.66,0.000025),
-        new Wave(2,"teal",7/8,45/13.66,5/13.66,0.00025),
-        new Wave(2,"#4495f2",71/80,35/13.66,4/13.66,0.0004)
-    ]
-    
-    let bolts=[];
-    function newBolt(forcedOnMouse){
-        //On créé un nouvel éclair avec des coordonnées au pif 
-        x1=getRandomInt(0,width);
-        x2=x1+getRandomInt(-0.1*width,0.1*width);
-        y1=0;
-        y2=(78/80)*height;
-        //L'arrivée est la souris dans certains cas
-        if(forcedOnMouse==true || (getRandomInt(0,100)>90)){
-            x2=mouseX;
-            y2=mouseY;
-        }
-        
-        //On evite de faire trop d'éclairs sinon ça lag, et on créé pas d'éclair si le mec regarde pas
-        if(bolts.length<5 && !document.hidden){
-            new Bolt(x1,y1,x2,y2,getRandomInt(800,1200),4,bolts,3,false);
-        }   
-        
-        //Puis on appel à la création d'un nouveau éclair, si ce n'est pas un éclair 'd'origine humaine'
-        if(forcedOnMouse==false){
-            setTimeout(function(){
-                newBolt(false);
-            },getRandomInt(minTimeBetweenBolts,maxTimeBetweenBolts));
-        }
-    }
-    
-    setTimeout(function(){
-        newBolt(false);
-    },getRandomInt(minTimeBetweenBolts,maxTimeBetweenBolts))
-    
-    //On charge l'image du bateau, et pause tout le temps de la charger
-    boatImage=new Image();
-    boatImage.src="img/pirateShip.png";
-    boatImage.addEventListener("load",function(){
-        let mainBoat=new Boat(waves[1],10,boatImage,0.34)
-        setInterval(function () {
-            ctx.clearRect(0,0,width,height);
-            
-            for(let bolt of bolts){
-                bolt.update();
-            }
-            
-            for (let wave of waves) {
-                if(wave==mainBoat.wave){
-                    mainBoat.update();
-                }
-                wave.update();
-            }  
-        },dT)
-
-        //On appel les fonctions qui font bouger le bateau quand nescessaire
-        window.addEventListener("scroll",function(){
-            mainBoat.onScroll();
-        }); 
-
-        window.addEventListener("resize",function(){
-            mainBoat.onScroll();
-        }); 
-
-        mainBoat.onScroll()
-    })
-
-    //On s'assure que tout soit toujours aux bonne dimension pour la page
-    window.addEventListener("resize",function(event){
-        canvas.width=window.innerWidth;
-        canvas.height=window.innerHeight;
-        width=canvas.width;
-        height=canvas.height;
-    })
-
-    window.addEventListener("mousemove",function(event){
-        mouseX=event.clientX;
-        mouseY=event.clientY;
-    })
-    
-    //On fait une fonction qui permet d'invoquer la foudre (avec une limite)
-    window.addEventListener("click",function(event){
-        if(bolts.length<5){
-            newBolt(true);
-        }  
-    })
 })
+
+window.addEventListener("mousemove",function(event){
+    mouseX=event.clientX;
+    mouseY=event.clientY;
+})
+
+//On fait une fonction qui permet d'invoquer la foudre (avec une limite)
+window.addEventListener("click",function(event){
+    if(bolts.length<5){
+        newBolt(true);
+    }  
+})
+
 
 

@@ -9,8 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunit&family=Raleway:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <img id="menuFlipper" class='.flipped' src='img/flipperOnWood.png'>
-    <div id="menu">
+    <img id="keysprite" class='hidden' src='img/key.png'>
+    <img id="menuFlipper" class='flipped' src='img/flipperOnWood.png'>
+    <div id="menu" class="hidden">
         <a href="#pd"><div><h2>Personal data</h2></div></a>
         <a href="#about"><div><h2>About me</h2></div></a>
         <a href="#experiences"><div><h2>Experiences</h2></div></a>
@@ -82,7 +83,7 @@
 
         <div class='woodboard' id ="interests" style='grid-area: interests;'>
             <h2 class='sectionTitle'>Interests</h2>
-            <p>I like to play video games. Big video games, like MMORPG or popular survival games. But also indie games because they often try something different, they find risky mechanics and go with them, for better or for worse. Or retro games, such as Atari 2600 ones, because from limitation emerge creativity.</p>
+            <p>I like to play video games. Big video games, like MM<span id="secretkey">O</span>RPG or popular survival games. But also indie games because they often try something different, they find risky mechanics and go with them, for better or for worse. Or retro games, such as Atari 2600 ones, because from limitation emerge creativity.</p>
             <p>Another part of video games I like is making them, I made a lot of small games in high school, as you can see down below, including some for game jams, small events where you have a limited time to create a game answering constraints (a given theme, limitations etc.)</p>
         </div>
 
@@ -109,5 +110,6 @@
     <script src='skills.js'></script>
     <script src='projects.js'></script>
     <script src='backgrounds.js'></script>
+    <script src='treasure.js'></script>
 </body>
 </html>

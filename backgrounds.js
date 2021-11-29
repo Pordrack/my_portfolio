@@ -118,40 +118,40 @@ function Background(node){
     })
 }
 
-window.addEventListener("load",function() {
-    //On charge l'image des planches en fond, et on fait tout ce qui a attraut au resize etc. une fois que c'est chargé
-    let plankBackgrounds=[];
-    let plankImage=new Image();
-    plankImage.src="img/plank.png";
-    plankImage.addEventListener("load",function(){
-        //On recupere toutes les div woodboard pour leur filer un fond
-        let woodboards=document.querySelectorAll(".woodboard");
-        for (const woodboard of woodboards) {
-            plankBackgrounds.push(new Background(woodboard,plankImage));
+
+//On charge l'image des planches en fond, et on fait tout ce qui a attraut au resize etc. une fois que c'est chargé
+let plankBackgrounds=[];
+let plankImage=new Image();
+plankImage.src="img/plank.png";
+plankImage.addEventListener("load",function(){
+    //On recupere toutes les div woodboard pour leur filer un fond
+    let woodboards=document.querySelectorAll(".woodboard");
+    for (const woodboard of woodboards) {
+        plankBackgrounds.push(new Background(woodboard,plankImage));
+    }
+    //On s'assure que tout soit toujours aux bonne dimension pour la page
+    window.addEventListener("resize",function(event){    
+        //On appel la fonction a declenché sur le resize de chaque fond
+        for (const pb of plankBackgrounds) {
+            pb.onResize();
         }
-        //On s'assure que tout soit toujours aux bonne dimension pour la page
-        window.addEventListener("resize",function(event){    
-            //On appel la fonction a declenché sur le resize de chaque fond
+        //On la rappelle après un petit temps pour que tout sois bien
+        setTimeout(function(){
             for (const pb of plankBackgrounds) {
                 pb.onResize();
             }
-            //On la rappelle après un petit temps pour que tout sois bien
-            setTimeout(function(){
-                for (const pb of plankBackgrounds) {
-                    pb.onResize();
-                }
-            },300)         
-            
-            //On la rappelle après un petit temps pour que tout sois VRAIMENT bien
-            setTimeout(function(){
-                for (const pb of plankBackgrounds) {
-                    pb.onResize();
-                }
-            },600)
-            
-            //Sans tous ces rappels : petit decalage possible
-        })
-    })   
-})
+        },300)         
+        
+        //On la rappelle après un petit temps pour que tout sois VRAIMENT bien
+        setTimeout(function(){
+            for (const pb of plankBackgrounds) {
+                pb.onResize();
+            }
+        },600)
+        
+        //Sans tous ces rappels : petit decalage possible
+    })
+})   
+
 
 
