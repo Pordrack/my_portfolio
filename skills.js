@@ -94,14 +94,17 @@ for (let category of categories) {
 
     //Puis on ajoute toutes les catégories et les skills
     for (let skill of category.skills) {
+        //Chaque skill a une div pour être centrée
+        divWrapper=document.createElement("div");
+        divWrapper.classList.add("skillbarAndName")
         //on créé le titre t la barre pour chaque skill
         title=document.createElement("h3");
         title.innerHTML=skill.name;
-        skillBoard.appendChild(title);
+        divWrapper.appendChild(title);
 
         barBackground=document.createElement("div");
         barBackground.classList.add("barBackground");
-        skillBoard.appendChild(barBackground);
+        divWrapper.appendChild(barBackground);
 
         barLevel=document.createElement("span");
         barLevel.classList.add("barLevel");
@@ -109,6 +112,7 @@ for (let category of categories) {
         barLevel.innerHTML=skill.level+"%";
         skill.node=barLevel;
         skill.displayLevel=0;
+        skillBoard.appendChild(divWrapper);
         /*barLevel.style.width=skill.level+"%";*/
     }
     skillBox.appendChild(skillBoard);

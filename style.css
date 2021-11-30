@@ -177,7 +177,7 @@ canvas{
 .pdGrid{
   display: grid;
   align-items: center;
-  grid-template-columns: 1px 15%  1fr;
+  grid-template-columns: 1px 1fr 1fr  1px;
   grid-template-rows: auto;
   column-gap: 3px;
   row-gap: 5px;
@@ -206,6 +206,7 @@ canvas{
   width: 100%;
   max-width: 40px;
   height: auto;
+  align-self: end;
 }
 
 .mail{
@@ -288,13 +289,20 @@ p{
 
 .sectionBoard{
   align-self: stretch;
+  align-items: center;
   margin-bottom: 30px;
+}
+
+.skillbarAndName{
+  width: fit-content;
+  margin: auto;
+  width: 90%;
 }
 
 /*Les barre de competence en particulier*/
 .barBackground{
   background-color: #2c5237;
-  width: 90%;
+  width: 100%;
 }
 
 .barLevel{
