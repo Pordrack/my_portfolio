@@ -37,8 +37,8 @@ function Background(node){
             imageWidth=this.targetNode.clientWidth;
             let factorOfSize=imageWidth/middleBgImage.width;
             //On garde un look pixel uni, seul exception étant si c'est trop fat
-            if(factorOfSize<0.5*(width/1300)){
-                factorOfSize=0.5*(width/1300);
+            if(factorOfSize<0.3*(width/1300)){
+                factorOfSize=0.3*(width/1300);
             }
             
             plankHeight=middleBgImage.height*factorOfSize
