@@ -64,7 +64,7 @@ html, body {
 }
 
 #menu.hidden{
-  left: -20vw;
+  left: -40vw;
 }
 
 #menu a{
@@ -173,14 +173,21 @@ canvas{
   color: rgba(240,240,240,0.9);
 }
 
-/*On fait la mini grid pour les personals data*/
+/*On fait la mini flexbox pour les personals data*/
 .pdGrid{
   display: grid;
   align-items: center;
-  grid-template-columns: 1px 1fr 1fr  1px;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
-  column-gap: 3px;
   row-gap: 5px;
+}
+
+/*Et la flexbox pour chaque data*/
+.pdFlex{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .centeredElement{
@@ -189,7 +196,7 @@ canvas{
 }
 
 .sectionTitle{
-  margin-bottom: 5%;
+  margin-bottom: 2%;
   margin-left: 5px;
 }
 
@@ -202,11 +209,14 @@ canvas{
   z-index: 1;
 }
 
+.pdFlex .icon{
+  margin-right: 2%;
+}
+
 .icon{
   width: 100%;
   max-width: 40px;
   height: auto;
-  align-self: end;
 }
 
 .mail{

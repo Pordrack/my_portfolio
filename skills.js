@@ -118,7 +118,7 @@ for (let category of categories) {
     skillBox.appendChild(skillBoard);
 }
 
-window.addEventListener("scroll",function(){
+function skillsOnScroll(){
     //quand on scroll, on check tous les nodes et on les mets a leur niveau si ils n'y sont pas et affichés, et
     //a 0 si ils sont à leur niveau mais plus affichésss
     for (let category of categories) {
@@ -132,4 +132,8 @@ window.addEventListener("scroll",function(){
             }
         }
     }
-})
+}
+
+window.addEventListener("scroll",skillsOnScroll);
+skillsOnScroll();
+
