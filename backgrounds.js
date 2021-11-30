@@ -20,14 +20,9 @@ function Background(node){
         middleBgImage.src="img/plankMiddle.png";
     });
     
-    let singleBgImage=new Image();
-    middleBgImage.addEventListener("load",function(){
-        singleBgImage.src="img/plankSingle.png";
-    });
-    
     
     let _this=this
-    singleBgImage.addEventListener("load",function(){
+    middleBgImage.addEventListener("load",function(){
         _this.canva=document.createElement("canvas");
         document.querySelector("body").appendChild(_this.canva);
         
@@ -37,13 +32,22 @@ function Background(node){
             imageWidth=this.targetNode.clientWidth;
             let factorOfSize=imageWidth/middleBgImage.width;
             //On garde un look pixel uni, seul exception étant si c'est trop fat
-            if(factorOfSize<0.3*(width/1300)){
-                factorOfSize=0.3*(width/1300);
+            if(factorOfSize<0.5*(width/1300)){
+                factorOfSize=0.5*(width/1300);
             }
             
+            //On calcul la hauteur de chaque planche
             plankHeight=middleBgImage.height*factorOfSize
             //Comme ça, on peut calculer de combien on en aura besoin
             numberOfImgRequired=Math.ceil(this.targetNode.clientHeight/plankHeight);
+
+            //Si moins de 3 planches, alors on doit en faire des plus petites
+            while(numberOfImgRequired<3){
+                plankHeight-=factorOfSize*10;    
+                numberOfImgRequired=Math.ceil(this.targetNode.clientHeight/plankHeight);
+            }
+            
+            
             //Et la hauteur de panneau
             imageHeight=plankHeight*numberOfImgRequired;
             
@@ -60,19 +64,14 @@ function Background(node){
                 //Quel taille on vise après avoir enlevé le milieu ? Exprimé en coordonnées dans l'image
                 let widthTargeted=imageWidth/factorOfSize;
                 let heightTargeted=plankHeight/factorOfSize;
-                
-                //J'ai laissé le code mais en fait j'en fait rien, oubliez
-                //On va aleatoire inverser verticalement ou nom chaque planche, pour plus de varieté
-                let xInvertFactor=getRandomInt(0,2)*2-1 //Genere -1 ou 1
-                let yInvertFactor=getRandomInt(0,2)*2-1 
+
+                let yStartMultiplier=1; //Passe a 0 pour la planche du début, pour qu'on commence a couper l'image de la planche a partir d'en haut en cas de planche du début, contrairement a celle du bas
                 
                 //En fonction de la position on prend un sprite de planche different
                 let image=middleBgImage;
-                if(i==0 && numberOfImgRequired==1){
-                    image=singleBgImage
-                }else if(i==0){
+                if(i==0){
                     image=startBgImage;
-                    yInvertFactor=1; //Ne pas retourner si debut ou fin, pour des raison evidente de "la bordure"
+                    yStartMultiplier=0; //Si planche du début, on coupe d'en haut
                 }else if(i==numberOfImgRequired-1){
                     image=endBgImage;
                     yInvertFactor=1; //Ne pas retourner si debut ou fin, pour des raison evidente de "la bordure"
@@ -93,15 +92,11 @@ function Background(node){
                 
                 //Truc pour rescale 
                 localCtx.save();
-                localCtx.translate(0.5*imageWidth,i*plankHeight+0.5*heightTargeted*factorOfSize);
-                //Desactivé l'inversion pour les rappels de resize (eviter que les encoches bougent)
-                /*localCtx.scale(xInvertFactor, yInvertFactor);*/
-                //On dessine alors les 2 moitiers de planches
-                localCtx.drawImage(image, 0, image.height-heightTargeted,0.5*widthTargeted+1,heightTargeted+1,-0.5*imageWidth,-0.5*heightTargeted*factorOfSize, 0.5*imageWidth+1, heightTargeted*factorOfSize+1);
-                localCtx.drawImage(image, image.width-0.5*widthTargeted, image.height-heightTargeted,0.5*widthTargeted+1,heightTargeted+1,0,-0.5*heightTargeted*factorOfSize,0.5*imageWidth+1, heightTargeted*factorOfSize+1);
-                
-                //Reset après rescale+dessin
-                localCtx.restore();
+
+                //On dessine alors la planche
+                localCtx.drawImage(image, 0, yStartMultiplier*(image.height-heightTargeted),0.5*widthTargeted,heightTargeted+1,0,i*plankHeight,0.5*imageWidth,(heightTargeted+1)*factorOfSize);                
+                localCtx.drawImage(image, image.width-0.5*widthTargeted,yStartMultiplier*(image.height-heightTargeted),0.5*widthTargeted,heightTargeted+1,0.5*imageWidth,i*plankHeight,0.5*imageWidth,(heightTargeted+1)*factorOfSize);                
+               
                 //localCtx.drawImage(image, 0, i*plankHeight, imageWidth, plankHeight);
             }
             
