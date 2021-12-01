@@ -41,8 +41,8 @@ function Background(node){
             //Comme ça, on peut calculer de combien on en aura besoin
             numberOfImgRequired=Math.ceil(this.targetNode.clientHeight/plankHeight);
 
-            //Si moins de 3 planches, alors on doit en faire des plus petites
-            while(numberOfImgRequired<3){
+            //Si moins de 2 planches, alors on doit en faire des plus petites
+            while(numberOfImgRequired<2){
                 plankHeight-=factorOfSize*10;    
                 numberOfImgRequired=Math.ceil(this.targetNode.clientHeight/plankHeight);
             }
