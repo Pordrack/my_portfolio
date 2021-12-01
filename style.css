@@ -21,7 +21,7 @@ html, body {
   right:1vw;
   top:2vw;
   left:auto;
-  transition: all 0.5s ease;
+  transition: all 2s ease;
   z-index: 999;
   pointer-events: none;
 }
@@ -41,14 +41,17 @@ html, body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-content: center;
+  align-items: center;
   width: 100%;
 }
 
 /*Le coffre*/
 #treasureChest{
-  width:25%;
+  width:30%;
   height: auto;
   transition: all 0.5s ease;
+  pointer-events: all;
 }
 
 /*Ce qui gere le balancement de droite a gauche du coffre le .hover qui est une classe que j'attribue en css remplace le :hover qui était buggé*/
@@ -58,6 +61,95 @@ html, body {
 
 #treasureChest.hover.left{
   transform: rotate(-5deg);
+}
+
+/*Le parchemin de l'indice*/
+#clueScroll{
+  background-image: url("img/scroll.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  /*Pour centrer le p au milieu*/
+  margin-left: 5%;
+  padding-right: 10%;
+  padding-left: 10%;
+  
+  height:300%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#clueScroll.hidden{
+  display: none;
+}
+
+#clueScroll p{
+  font-family: 'Architects Daughter', cursive;
+  text-align: center;
+  padding-bottom: 2%;
+  color: rgba(0,0,0,0.8);
+  text-shadow: 0 0 0.2em rgba(0,0,0,0.8);
+}
+
+/*Le panel caché qui controle les vagues*/
+#hiddenPanel{
+  width:65%;
+  margin-left: 5%;
+  border-radius: 25px;
+  background: #bdac78;
+  border-radius: 10px;
+  border: 5px solid #62542b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#hiddenPanel.hidden{
+  display: none;
+}
+
+#hiddenPanel h3{
+  font-family: 'Architects Daughter', cursive;
+  color: rgba(36, 20, 6, 0.822);
+  text-shadow: 0 0 0.2em rgba(36, 20, 6, 0.822);
+}
+
+/*Les sliders: copié collé de https://www.w3schools.com/howto/howto_js_rangeslider.asp*/
+.slidecontainer{
+  width:90%;
+  margin-bottom: 5px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;  
+  background: #62542b;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; 
+  background: rgb(36, 20, 6);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgb(36, 20, 6);
+  cursor: pointer;
 }
 
 /*Le menu pour naviguer*/
@@ -112,7 +204,7 @@ html, body {
   white-space: nowrap;
   font-size: medium;
   margin-left: 10%;
-  padding-right: 2em;
+  padding-right: 3rem;
   padding-top: 0.3em;
   padding-bottom: 0.3em;
 }

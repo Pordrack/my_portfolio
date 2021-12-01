@@ -110,6 +110,10 @@ function Background(node){
         
         
         _this.onResize();
+
+        setTimeout(function(){
+            _this.onResize
+        },600)
     })
 }
 

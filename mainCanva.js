@@ -8,6 +8,10 @@ let minTimeBetweenBolts=1000;
 let maxTimeBetweenBolts=4000;
 let mouseX=0;
 let mouseY=0;
+let waveWidthMultiplier=1;
+let waveHeightMultiplier=1;
+let waveSpeedMultiplier=1;
+let lightningRate=0.1;
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -16,11 +20,11 @@ function getRandomInt(min, max) {
 }
 
 function waveFunction(x,waveHeight,waveLength) {
-    return waveHeight*Math.sin(x/waveLength)-0.5*waveHeight ;
+    return waveHeight*waveHeightMultiplier*Math.sin(x/(waveLength*waveWidthMultiplier))-0.5*waveHeight*waveHeightMultiplier;
 } ;
 
 function waveAngle(x,waveLength,waveHeight) {
-    x=x/waveLength;
+    x=x/(waveLength*waveWidthMultiplier);
     //On calcule les coordonnées de 2 points de la droite tangente en X
     let xPoint1=x-5;
     let xPoint2=x+5;
@@ -30,7 +34,7 @@ function waveAngle(x,waveLength,waveHeight) {
     let yPoint2=Math.cos(x)*(5)
     
     //On calcule alors l'angle ntre les 2 points, avec un coeficient qui dépend de la hauteur pour moduler l'angle
-    let angle=Math.atan2(yPoint2-yPoint1,xPoint2-xPoint1)*(waveHeight/(angleStifness*waveLength))
+    let angle=Math.atan2(yPoint2-yPoint1,xPoint2-xPoint1)*((waveHeight*waveHeightMultiplier)/(angleStifness*waveLength*waveWidthMultiplier))
     
     //Pour eviter les angles très intense on impose un maximum et un minimum
     if(angle>0.4*Math.PI){
@@ -62,7 +66,7 @@ function Wave(curveStep,color,seaLevel,waveLength,waveHeight,speed) {
     this.update=function() {
         ctx.beginPath();
         //On applique la vitesse à base X, pour que les vagues bouge, on multiplie par la waveLength pour compenser la division de plus tard, ainsi que par la largeur de l'écran
-        this.baseX+=(this.speed*this.waveLength)*width;
+        this.baseX+=(this.speed*this.waveLength*waveSpeedMultiplier)*width;
         //a chaque frame on redessine les vagues en faisant un polygone 
         //Qui va d'abord faire la ligne des vagues en suivant la fonction
         
@@ -365,13 +369,13 @@ function newBolt(forcedOnMouse){
     if(forcedOnMouse==false){
         setTimeout(function(){
             newBolt(false);
-        },getRandomInt(minTimeBetweenBolts,maxTimeBetweenBolts));
+        },getRandomInt(minTimeBetweenBolts,maxTimeBetweenBolts)*1/(lightningRate*10));
     }
 }
 
 setTimeout(function(){
     newBolt(false);
-},getRandomInt(minTimeBetweenBolts,maxTimeBetweenBolts))
+},getRandomInt(minTimeBetweenBolts,maxTimeBetweenBolts)*1/(lightningRate*10))
 
 //On charge l'image du bateau, et pause tout le temps de la charger
 boatImage=new Image();

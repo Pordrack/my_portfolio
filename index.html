@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Jérémy Auclair</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Nunit&family=Raleway:wght@300&display=swap" rel="stylesheet"> 
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nunito&family=Raleway:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <img id="keysprite" class='hidden' src='img/key.png'>
@@ -93,6 +94,28 @@
 
         <div style='grid-area: chest;' class='treasureTrove'>
             <img src="img/chest.png" id="treasureChest">
+            <div id="clueScroll" class="hidden">
+                <p>Hidden in the cork of a bottle of french wine.</p>
+            </div>
+
+            <div id="hiddenPanel" class="hidden">
+                <h3>Waves' width:</h3>
+                <div class="slidecontainer">
+                    <input type="range" min="0.3" max="80" value="1" class="slider" id="waveWidthMultiplier" step=0.01>
+                </div>
+                <h3>Waves' height:</h3>
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="60" value="1" class="slider" id="waveHeightMultiplier" step=0.01>
+                </div>
+                <h3>Waves' speed:</h3>
+                <div class="slidecontainer">
+                    <input type="range" min="-10" max="10" value="1" class="slider" id="waveSpeedMultiplier" step=0.01>
+                </div>
+                <h3>Lightning bolts' rate:</h3>
+                <div class="slidecontainer">
+                    <input type="range" min="0.01" max="4" value="1" class="slider" id="lightningRate" step=0.01>
+                </div>
+            </div>
         </div>
 
         <div class='woodboard' id ="interests" style='grid-area: interests;'>
