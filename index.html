@@ -7,12 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunit&family=Raleway:wght@300&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <img id="keysprite" class='hidden' src='img/key.png'>
     <img id="menuFlipper" class='flipped' src='img/flipperOnWood.png'>
     <div id="menu" class="hidden">
+        <a href="#banner"><div><h2>Mainmast</h2></div></a>
         <a href="#pd"><div><h2>Personal data</h2></div></a>
         <a href="#about"><div><h2>About me</h2></div></a>
         <a href="#experiences"><div><h2>Experiences</h2></div></a>
@@ -22,6 +24,7 @@
         <a href="#interests"><div><h2>Interests</h2></div></a>
         <a href="#references"><div><h2>References</h2></div></a>
         <a href="#projects"><div><h2>My projects</h2></div></a>
+        <a href="#footer"><div><h2>Davy Jones' Locker</h2></div></a>
     </div>
     <canvas id='mainCanva'>
         Sorry, it seems your browser cannot display canvas :/
@@ -29,7 +32,7 @@
     <!--La grid qui contient tout le site-->
     <div class='container'>
         <div style='grid-area: banner;'>
-            <div class='woodboard titleBoard'>
+            <div class='woodboard titleBoard' id="banner">
                 <h1>Jérémy Auclair</h1>
                 <h2>Developer and aspiring game designer</h2>
             </div>    
@@ -88,22 +91,30 @@
             <p>I manage my time well and can concentrate on multiple projects at one. I am self-directed and able to take initiative. I like when things go fast, I can work quickly and efficiently.</p> 
         </div>
 
+        <div style='grid-area: chest;' class='treasureTrove'>
+            <img src="img/chest.png" id="treasureChest">
+        </div>
+
         <div class='woodboard' id ="interests" style='grid-area: interests;'>
             <h2 class='sectionTitle'>Interests</h2>
-            <p>I like to play video games. Big video games, like MM<span id="secretkey">O</span>RPG or popular survival games. But also indie games because they often try something different, they find risky mechanics and go with them, for better or for worse. Or retro games, such as Atari 2600 ones, because from limitation emerge creativity.</p>
+            <p>I like to play video games. Big video games, like MMORPG or popular survival games. But also indie games because they often try something different, they find risky mechanics and go with them, for better or for worse. Or retro games, such as Atari 2600 ones, because from limitation emerge creativity.</p>
             <p>Another part of video games I like is making them, I made a lot of small games in high school, as you can see down below, including some for game jams, small events where you have a limited time to create a game answering constraints (a given theme, limitations etc.)</p>
         </div>
 
         <div class='woodboard' id="interests" style='grid-area: references;'>
             <h2 class='sectionTitle'>References</h2>
-            <h3>Stephanie Bouchon</h3>
+            <h3>Stephanie <span id="secretkey">Bouchon</span></h3>
             <p>&emsp;English Teacher</p>
             <p>&emsp;IUT - Annecy</p>
             <p>&emsp;stephanie.bouchon@univ-smb.fr</p>
             <h3 style='margin-top:5%'>Nathalie Gruson</h3>
             <p>&emsp;Programmation Teacher</p>
             <p>&emsp;IUT - Annecy</p>
-            <p>&emsp;stephanie.bouchon@univ-smb.fr</p>
+            <p>&emsp;nathalie.gruson@univ-smb.fr</p>
+            <h3 style='margin-top:5%'>Luc Damas</h3>
+            <p>&emsp;Web Programmation Teacher</p>
+            <p>&emsp;IUT - Annecy</p>
+            <p>&emsp;nathalie.gruson@univ-smb.fr</p>
         </div>
 
         <div id="projects" class='sectionFlexbox' style='grid-area: projects;'>
@@ -111,6 +122,7 @@
         </div>
     </div>
     <div class="whitespace"></div>
+    <footer id="footer">&copy; Jérémy Auclair - 2021</footer>
     
     <script src='menuFlipper.js'></script>
     <script src='mainCanva.js'></script>

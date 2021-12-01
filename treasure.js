@@ -24,3 +24,18 @@ window.addEventListener("load",onloadAndResize)
 window.addEventListener("resize",onloadAndResize)
 
 window.addEventListener("scroll",onloadAndResize)
+
+/*On gère le coffre et son balottement de droite a gauche*/
+let intervalId;
+chest=document.querySelector("#treasureChest");
+chest.addEventListener('mouseenter',function(){
+    chest.classList.add("hover");
+    intervalId=setInterval(function(){
+        chest.classList.toggle("left");
+    },250);
+})
+
+chest.addEventListener('mouseleave',function(){
+    chest.classList.remove("hover");
+    clearInterval(intervalId);
+})

@@ -94,8 +94,8 @@ function Background(node){
                 localCtx.save();
 
                 //On dessine alors la planche
-                localCtx.drawImage(image, 0, yStartMultiplier*(image.height-heightTargeted),0.5*widthTargeted,heightTargeted+1,0,i*plankHeight,0.5*imageWidth,(heightTargeted+1)*factorOfSize);                
-                localCtx.drawImage(image, image.width-0.5*widthTargeted,yStartMultiplier*(image.height-heightTargeted),0.5*widthTargeted,heightTargeted+1,0.5*imageWidth,i*plankHeight,0.5*imageWidth,(heightTargeted+1)*factorOfSize);                
+                localCtx.drawImage(image, 0, yStartMultiplier*(image.height-heightTargeted),0.5*widthTargeted+2*factorOfSize,heightTargeted,0,i*plankHeight,0.5*imageWidth+2,(heightTargeted)*factorOfSize+2);                
+                localCtx.drawImage(image, image.width-0.5*widthTargeted,yStartMultiplier*(image.height-heightTargeted),0.5*widthTargeted,heightTargeted,0.5*imageWidth,i*plankHeight,0.5*imageWidth,(heightTargeted)*factorOfSize+2);                
                
                 //localCtx.drawImage(image, 0, i*plankHeight, imageWidth, plankHeight);
             }

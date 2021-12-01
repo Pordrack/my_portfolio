@@ -23,8 +23,25 @@ categories=[
                 'level':90
             },
             {
-                'name':'C#',
-                'level':58
+                'name':'Java',
+                'level':70
+            }
+        ]
+    },
+    {
+        'name':'Game engines',
+        'skills':[
+            {
+                'name':'Unity',
+                'level':80
+            },
+            {
+                'name':'Pico 8',
+                'level':70
+            },
+            {
+                'name':'Love2D',
+                'level':80
             }
         ]
     },
@@ -33,11 +50,11 @@ categories=[
         'skills':[
             {
                 'name':'HTML',
-                'level':60
+                'level':70
             },
             {
                 'name':'CSS',
-                'level':55
+                'level':65
             },
             {
                 'name':'JavaScript',
@@ -62,7 +79,7 @@ categories=[
             },
             {
                 'name':'Oracle SQL',
-                'level':58
+                'level':70
             }
         ]
     },
@@ -70,12 +87,12 @@ categories=[
         'name':'Languages',
         'skills':[
             {
-                'name':'French (native)',
-                'level':92
+                'name':'French',
+                'level':'native'
             },
             {
                 'name':'English',
-                'level':65
+                'level':75
             }
         ]
     },
@@ -109,7 +126,13 @@ for (let category of categories) {
         barLevel=document.createElement("span");
         barLevel.classList.add("barLevel");
         barBackground.appendChild(barLevel);
-        barLevel.innerHTML=skill.level+"%";
+        if(typeof(skill.level)=='number') 
+        {
+            barLevel.innerHTML=skill.level+"%";
+        }else{
+            barLevel.innerHTML="native";
+        }
+        
         skill.node=barLevel;
         skill.displayLevel=0;
         skillBoard.appendChild(divWrapper);
@@ -125,7 +148,12 @@ function skillsOnScroll(){
         for (let skill of category.skills) {
             if(isInViewport(skill.node) && skill.displayLevel==0){
                 skill.displayLevel=skill.level;
-                skill.node.style.width=skill.level+"%";
+                if(typeof(skill.level)=='number'){
+                    skill.node.style.width=skill.level+"%";
+                }else{
+                    skill.node.style.width="100%";
+                }
+                
             }else if(!isInViewport(skill.node) && skill.displayLevel!=0){
                 skill.displayLevel=0;
                 skill.node.style.width=0;

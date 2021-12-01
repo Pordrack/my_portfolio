@@ -36,6 +36,30 @@ html, body {
   transition: none;
 }
 
+/*L'endroit ou y'as le coffre etc.*/
+.treasureTrove{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+/*Le coffre*/
+#treasureChest{
+  width:25%;
+  height: auto;
+  transition: all 0.5s ease;
+}
+
+/*Ce qui gere le balancement de droite a gauche du coffre le .hover qui est une classe que j'attribue en css remplace le :hover qui était buggé*/
+#treasureChest.hover{
+  transform: rotate(5deg);
+}
+
+#treasureChest.hover.left{
+  transform: rotate(-5deg);
+}
+
 /*Le menu pour naviguer*/
 #menuFlipper{
   position:fixed;
@@ -64,13 +88,13 @@ html, body {
 }
 
 #menu.hidden{
-  left: -40vw;
+  left: -100vw;
 }
 
 #menu a{
-  margin-top: 2%;
+  margin-top: 2px;
   margin-left: 0px;
-  margin-bottom: 2%;
+  margin-bottom: 2px;
 }
 
 #menu div{
@@ -262,7 +286,6 @@ h3{
   margin-bottom: 0px;
   margin-top: 0px;
   font-weight: bold;
-  pointer-events: none;
 }
 
 h4{
@@ -279,6 +302,14 @@ p{
   text-align:justify;
   font-weight: normal;
   font-family: 'Nunito', sans-serif;
+}
+
+footer{
+  margin-bottom: 4vh;
+  text-align: center;
+  font-weight: bold;
+  color: rgba(240, 255, 255,0.7);
+  text-shadow: 0 0 0.1em rgba(240, 255, 255,0.5);
 }
 
 .titleBoard{ /* les planches faites pour contenir un seul titre/text, comme le titre skills*/
