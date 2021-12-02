@@ -79,7 +79,7 @@ categories=[
             },
             {
                 'name':'Oracle SQL',
-                'level':70
+                'level':78
             }
         ]
     },
