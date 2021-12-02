@@ -95,14 +95,22 @@ html, body {
 
 /*Le panel caché qui controle les vagues*/
 #hiddenPanel{
-  width:65%;
+  width:75%;
   margin-left: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
   border-radius: 25px;
   background: #bdac78;
-  border-radius: 10px;
+  border-radius: 0px;
   border: 5px solid #62542b;
+  /*background-image: url("img/higherScroll.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% auto;
+  height: 150%;*/
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
