@@ -72,6 +72,5 @@ for (const slider of sliders) {
     slider.oninput=function(){
         eval(slider.id+"="+slider.value); //Lance l'instruction js passée en temps que string
     }
-    console.log(eval(slider.id));
 }
 

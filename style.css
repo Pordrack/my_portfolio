@@ -436,6 +436,10 @@ footer{
   margin-bottom: 30px;
 }
 
+.sectionBoard h3{
+  pointer-events: none;
+}
+
 .skillbarAndName{
   width: fit-content;
   margin: auto;
