@@ -63,6 +63,7 @@ function Wave(curveStep,color,seaLevel,waveLength,waveHeight,speed) {
     this.speed=speed;
     this.baseX=0 //Le "declage" de la vague, en le faisant changer avec la speed on la fait bouger
     
+    //update et dessine à chaque frame
     this.update=function() {
         ctx.beginPath();
         //On applique la vitesse à base X, pour que les vagues bouge, on multiplie par la waveLength pour compenser la division de plus tard, ainsi que par la largeur de l'écran

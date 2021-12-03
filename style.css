@@ -405,7 +405,7 @@ p{
 }
 
 footer{
-  margin-bottom: 4vh;
+  padding-bottom: 4vh;
   text-align: center;
   font-weight: bold;
   color: rgba(240, 255, 255,0.7);
@@ -458,7 +458,7 @@ footer{
 	width: 0%;
 	display: inline-block;
 	background-color: rgba(68, 149, 242,0.7);
-  box-shadow: 0 0 0.2em rgba(68, 149, 242,0.7);
+  box-shadow: 0 0 0.3em rgba(68, 149, 242,0.7);
   color: rgba(0,0,0,0.8);
 }
 
