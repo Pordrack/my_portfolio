@@ -66,8 +66,6 @@ function Wave(curveStep,color,seaLevel,waveLength,waveHeight,speed) {
     //update et dessine à chaque frame
     this.update=function() {
         ctx.beginPath();
-        //On applique la vitesse à base X, pour que les vagues bouge, on multiplie par la waveLength pour compenser la division de plus tard, ainsi que par la largeur de l'écran
-        this.baseX+=(this.speed*this.waveLength*waveSpeedMultiplier)*width;
         //a chaque frame on redessine les vagues en faisant un polygone 
         //Qui va d'abord faire la ligne des vagues en suivant la fonction
         
@@ -90,6 +88,8 @@ function Wave(curveStep,color,seaLevel,waveLength,waveHeight,speed) {
         ctx.fill();
         //qu'on oublie pas de "reset" a la fin
         ctx.shadowBlur = 0;
+        //On applique la vitesse à base X, pour que les vagues bouge, on multiplie par la waveLength pour compenser la division de plus tard, ainsi que par la largeur de l'écran
+        this.baseX+=(this.speed*this.waveLength*waveSpeedMultiplier)*width;
     }
     //renvoie la hauteur Y de la vague en un point donné
     this.getY=function (x){
