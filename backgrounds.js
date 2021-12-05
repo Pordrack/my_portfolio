@@ -114,6 +114,10 @@ function Background(node){
         setTimeout(function(){
             _this.onResize
         },600)
+
+        setTimeout(function(){
+            _this.onResize
+        },3000)
     })
 }
 

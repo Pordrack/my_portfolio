@@ -152,6 +152,9 @@ for (let project of projects) {
     projectBoard.classList.add("woodboard");
     projectBoard.classList.add("sectionBoard");
     projectBoard.classList.add("hideIframes");
+
+    //Panneau qu'on enregistre dans le json
+    project["node"]=projectBoard;
     
     //Avec la date
     let dateTitle=document.createElement("h3");
@@ -179,7 +182,8 @@ for (let project of projects) {
     projectBoard.appendChild(iframeContainer)
     
     let iframe=document.createElement("iframe");
-    iframe.src=project.link;
+    iframe.src=null;
+    iframe.innerHTML=project.link; //On le stock en inner HTML pour le ressortir après en src quand le projet est dévoilé
     iframe.classList.add("centeredElement");
     iframeContainer.appendChild(iframe);
     iframe.allowFullscreen=true;
@@ -212,9 +216,24 @@ for (let project of projects) {
     //Quand on clique, on cache/montre le parag et les images
     projectBoard.addEventListener("click",function(event){
         event.target.classList.toggle("hideIframes");
+        //On cache les autres iframes pour économiser les ressources
+        hideAllProjects(event.target);
+        //On charge également le contenu du iframe si c'est un montrage
+        if(!event.target.classList.contains("hideIframes")){
+            let iframe=event.target.querySelector("iframe");
+            iframe.src=iframe.innerHTML;
+        }
         //Puis on trigger le resize pour bouger le bateau/refaire les planches
         window.dispatchEvent(new Event('resize'));
-    })
-    
-    
+    })   
+}
+
+function hideAllProjects(nodeOfException){//On cache tous les projets sauf un
+    for (const project of projects) {
+        if(project.node!=nodeOfException){
+            project.node.classList.add("hideIframes");
+            let iframe=project.node.querySelector("iframe");
+            iframe.src=null;
+        }
+    }
 }
