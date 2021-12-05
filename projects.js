@@ -1,6 +1,7 @@
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const dimensions={"itchioDownload":{"width":552,"height":160},
 "pico8":{"width":1920,"height":1080},
+"youtubeVideo":{"width":853,"height":480},
 "website":{"width":1,"height":0.6}
 } //Stock les dimensions des differents types d'iframe
 
@@ -66,6 +67,16 @@ const projects=[
         'date':'2019-05-01',
         'link':'https://itch.io/embed/1286692?dark=true',
         'type':'itchioDownload',
+    },
+    {
+        'name':'[Video] Fake commercial for San Pellegrino',
+        'date':'2019-04-28',
+        'link':'https://www.youtube.com/embed/ZqJPO92x0E0',
+        'type':'youtubeVideo',
+        'description':[
+            '[English subs available]',
+            'Made by my classmates and myself as a school project for our italian class. We had a lot of fun writing and filming it! I\'m the nerd and the narrator. You can find more complete credits in the video description.'
+        ]
     },
     {
         'name':'[Website] Le fil rouge des bloods',
