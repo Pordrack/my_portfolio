@@ -17,7 +17,7 @@ const projects=[
     {
         'name':'Gravitrain',
         'date':'2021-06-20',
-        'link':'https://itch.io/embed/1307342',
+        'link':'https://itch.io/embed/1307342?dark=true',
         'type':'itchioDownload',
     },
     {
