@@ -15,6 +15,12 @@ startBgImage.addEventListener("load",function(){
 const projectBox=document.querySelector('#projects')
 const projects=[
     {
+        'name':'Gravitrain',
+        'date':'2021-06-20',
+        'link':'https://itch.io/embed/1307342',
+        'type':'itchioDownload',
+    },
+    {
         'name':'An Endless Search',
         'date':'2021-01-01',
         'link':'https://itch.io/embed-upload/4806156?color=23314b',
