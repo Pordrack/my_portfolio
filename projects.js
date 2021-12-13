@@ -20,7 +20,7 @@ const projects=[
         'link':'https://pordrack.github.io/my_portfolio',
         'type':'website',
         'description':[
-            'Originally made as a cross-project between web development and english, I have maintained and upgraded ever since to make this website a display of my work.'
+            'Originally made as a cross-project between web development and english, I have maintained and upgraded it ever since to make this website a display of my work.'
         ]
     },
     {
