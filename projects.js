@@ -17,7 +17,7 @@ const projects=[
     {
         'name':'This portfolio',
         'date':'2021-12-13',
-        'link':'https://pordrack.github.io/my_portfolio/',
+        'link':'https://pordrack.github.io/my_portfolio',
         'type':'website',
         'description':[
             'Originally made as a cross-project between web development and english, I have maintained and upgraded ever since to make this website a display of my work.'
