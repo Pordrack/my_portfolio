@@ -436,7 +436,7 @@ footer{
   margin-bottom: 30px;
 }
 
-.sectionBoard h3{
+.sectionBoard.hideIframes h3{
   pointer-events: none;
 }
 

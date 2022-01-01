@@ -19,7 +19,7 @@ categories=[
                 'level':59
             },
             {
-                'name':'C#',
+                'name':'C<span id="secretkey">#</span>',
                 'level':90
             },
             {
