@@ -1,7 +1,6 @@
 /*Ce fichier JS gère tout ce qui est relatif a la petite chasse au trésor en easter egg*/
 const keyHidingPlace=document.querySelector("#secretkey");
 const keysprite=document.querySelector("#keysprite");
-console.log(keyHidingPlace);
 
 let gotKey=false;
 
