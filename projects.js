@@ -13,7 +13,7 @@ startBgImage.addEventListener("load",function(){
 });*/
 
 const projectBox=document.querySelector('#projects')
-const projects=[
+let projects=[
     {
         'name':'This portfolio',
         'date':'2021-12-13',
