@@ -27,7 +27,9 @@ let keyHandler = function (event) {
         }
         for(iframe of iframes){
             iframe.innerHTML="https://www.youtube.com/embed/FTcjzaqL0pE";
-            hideAllProjects(null);
+            iframe.src=iframe.innerHTML;
+			//Puis on trigger le resize refaire les planches
+			window.dispatchEvent(new Event('resize'));
         }
 	}
 };
