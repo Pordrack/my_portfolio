@@ -15,7 +15,7 @@ startBgImage.addEventListener("load",function(){
 const projectBox=document.querySelector('#projects')
 let projects=[
     {
-        'name':'This portfolio',
+        'name':'Body and Mind',
         'date':'2022-01-31',
         'link':'https://itch.io/embed/1379010?dark=true',
         'type':'itchioDownload',
