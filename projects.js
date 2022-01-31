@@ -16,6 +16,15 @@ const projectBox=document.querySelector('#projects')
 let projects=[
     {
         'name':'This portfolio',
+        'date':'2022-01-31',
+        'link':'https://itch.io/embed/1379010?dark=true',
+        'type':'itchioDownload',
+        'description':[
+            'Made in 48h with two friends. It lacks some polish so I\'d like to improve it in the future.'
+        ]
+    },
+    {
+        'name':'This portfolio',
         'date':'2021-12-13',
         'link':'https://pordrack.github.io/my_portfolio',
         'type':'website',
