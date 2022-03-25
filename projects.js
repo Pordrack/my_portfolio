@@ -15,6 +15,16 @@ startBgImage.addEventListener("load",function(){
 const projectBox=document.querySelector('#projects')
 let projects=[
     {
+        'name':'Regex automata generator',
+        'date':'2022-03-25',
+        'link':'https://pordrack.github.io/languageAutomate/',
+        'type':'website',
+        'showLink':true,
+        'description':[
+            'Made in a couple of days as an assignement, this website allows you tu generate automata based on regex formulas.',
+        ]
+    },
+    {
         'name':'Body and Mind',
         'date':'2022-01-31',
         'link':'https://itch.io/embed/1379010?dark=true',
