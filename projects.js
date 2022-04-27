@@ -1,6 +1,7 @@
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const dimensions={"itchioDownload":{"width":552,"height":160},
 "pico8":{"width":1920,"height":1080},
+"unityWebgl":{"width":1920,"height":1080},
 "youtubeVideo":{"width":853,"height":480},
 "website":{"width":1,"height":0.6}
 } //Stock les dimensions des differents types d'iframe
@@ -15,7 +16,26 @@ startBgImage.addEventListener("load",function(){
 const projectBox=document.querySelector('#projects')
 let projects=[
     {
-        'name':'Regex automata generator',
+        'name':'Colin of Duty',
+        'date':'2022-04-19',
+        'link':'https://itch.io/embed/1442886?dark=true',
+        'type':'itchioDownload',
+        'description':[
+            'Colin of Duty is a humoristic FPS inspired by Doom. The game takes place in the IUT of Annecy, and was made by 4 perons as an hommage to our school and teachers.'
+        ]
+    },
+    {
+        'name':'Mushrooms of the end',
+        'date':'2022-04-04',
+        'link':'https://itch.io/embed/1471985?dark=true',
+        'type':'itchioDownload',
+        'description':[
+            'Made in 72 hours for the 50th Ludum Dare by 5 persons, the game is a mix between survival games and idle games.',
+            'It was a great learning experience, the systems of the Ludum Dare make it so you get a lot of feedback which is great pinpoint your flaws.'
+        ]
+    },
+    {
+        'name':'[Website] Regex automata generator',
         'date':'2022-03-25',
         'link':'https://pordrack.github.io/languageAutomate/',
         'type':'website',

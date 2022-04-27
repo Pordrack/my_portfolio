@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Jérémy Auclair</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Nunito&family=Raleway:wght@300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <img id="keysprite" class='hidden' src='img/key.png'>
+    <img id="menuFlipper" class='flipped' src='img/flipperOnWood.png'>
+    <div id="menu" class="hidden">
+        <a href="#MushroomsOfTheEnd">
+            <div>
+                <h2>Mushrooms of the end</h2>
+            </div>
+        </a>
+        <a href="#ColinOfDuty">
+            <div>
+                <h2>Colin of Duty</h2>
+            </div>
+        </a>
+        <a href="#SpreadOut">
+            <div>
+                <h2>Spread Out</h2>
+            </div>
+        </a>
+
+        <a href="#links">
+            <div>
+                <h2>Liens externes</h2>
+            </div>
+        </a>
+    </div>
+    <canvas id='mainCanva'>
+        Sorry, it seems your browser cannot display canvas :/, you are missing a pretty neat part of my website, try
+        switching to a newer browser like Firefox or chrome ?
+    </canvas>
+    <!--La grid qui contient tout le site-->
+    <div class='container highlights-container'>
+        <div style='grid-area: banner; margin-bottom: 20vh;'>
+            <div class='woodboard titleBoard' id="banner">
+                <h1>Jérémy Auclair</h1>
+                <h2>Mon portfolio</h2>
+            </div>
+        </div>
+
+
+        <div class='woodboard titleBoard' id="MushroomsOfTheEnd" style='grid-area: titre1;'>
+            <h1>Mushrooms of the end</h1>
+            <div class="iframe-container shadow" style="width:100%; padding-top: 28.9855%;">
+                <!-- Voir project.js pour comment j'ai obtenu cette valeur (normalement elle est calculée) -->
+                <iframe style="height:100%" src="https://itch.io/embed/1471985?dark=true" class="centeredElement" allowfullscreen="">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="woodboard descriptionBoard" id="p11" style="grid-area: p11;">
+            <p>Mushrooms of the End est un jeu fait en 3 jours pour la 50ème Ludum Dare dont le thème étais « Delay the inevitable ».</p>
+            <p>Nous nous sommes réunis avec 4 amis par Discord pour réaliser ce jeu. Ils s’agissaient de notre première game jam ensembles et ce fut une expérience formatrice et agréable. Je me suis occupée d’une partie de la programmation sur Unity, d’une partie du game design et d’une partie des graphismes.</p>
+        </div>
+
+        <div class="woodboard" id="img11" style="grid-area: img11;">
+            <div class="shadow">
+                <img clas="centeredElement" src="https://static.jam.vg/raw/beb/54/z/4b5b0.png" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class="woodboard descriptionBoard" id="p12" style="grid-area: p12;">
+            <p>Mushrooms of the End se passe dans un univers post-apocalyptique et demande aux joueurs de s’occuper de champignons en les arrosant et en écrasant les insectes les menaçants. La quantité d’eau étant limitée le jouer doit constamment surveiller sa quantité de ressources. Si le joueur garde un champignon en vie jusqu’à la fin du chronomètre, il peut passer au niveau suivant. </p>
+            <p> En développant le concept, nous avons pu distinguer 2 stratégies distinctes : celles ou le joueur ne s’occupe que d’un champignon, laissant mourir les autre, et celle où il jongle entre eux. Bien souvent, la meilleure chose à faire est d’appliquer la première pour amasser de l’argent, puis, lorsque cela devient ingérable, de se concentrer sur la survie d’une unique plante. L’enjeu devient alors d’identifier le moment idéal pour effectuer ce revirement.</p>
+        </div>
+
+        <div class="woodboard" id="img11" style="grid-area: img12;">
+            <div class="shadow">
+                <img clas="centeredElement" src="img/Screenshot_140.png" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class="woodboard descriptionBoard" id="p13" style="grid-area: p13;">
+            <p>Nous nous sommes inspirés des « idles games » puisque les plantes produisent en continue des ressources qui servent à acheter des améliorations qui s’avèrent nécessaire lorsque des événements aléatoire (une canicule et une invasion d’insecte) viennent corser la partie. </p>
+            <p>Concernant l’ambiance sonore, la musique est inspirée de Plant vs Zombie,tandis que les bruitages ont été réalisés à la bouche avec quelques effets rajouté via Audacity. </p>
+            <p>Pour les graphismes, nous avons pu expérimenter les difficultés d’une game jam puisque la tablette graphique de notre graphiste est tombée en panne à la fin du premier jour, c’est pour cela que de nombreux graphismes ont été fait à partir de photos retouchés. </p>
+        </div>
+
+        <div class="woodboard" id="img13" style="grid-area: img13;">
+            <div class="shadow">
+                <img class="centeredElement" src="img/Screenshot_141.png" data-zoomable/>  
+            </div>
+        </div>
+
+
+        <div class="spaceBetweenGames" style="grid-area:whitespace1"></div>
+
+
+        <div class='woodboard titleBoard' id="ColinOfDuty" style='grid-area: titre2;'>
+            <h1>Colin of Duty</h1>
+            <div class="iframe-container shadow" style="width:100%; padding-top: 28.9855%;">
+                <!-- Voir project.js pour comment j'ai obtenu cette valeur (normalement elle est calculée) -->
+                <iframe style="height:100%" src="https://itch.io/embed/1442886?dark=true" class="centeredElement" allowfullscreen="">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="woodboard descriptionBoard" id="p21" style="grid-area: p21;">
+            <p>Lors de notre deuxième année de DUT, nous sommes plusieurs dans ma promotion à avoir choisis comme option un cours de Unity et de Blender. Sortit de ces cours un jeu : Colin of Duty.</p>
+            <p>Né d’un sujet au grand potentiel (faire un jeu se déroulant dans notre bâtiment universitaire) Colin of Duty est un FPS survolté et humoristique rendant hommage à nos professeurs et à nos souvenirs de 2 années formidables et formatrices. Nous avons réalisé le projet en groupe à 4. Je me suis occupé d’une partie du game design, d’une partie de la programmation Unity, et de la réalisation de 2 PDFs dont nous reparlerons plus tard. </p>
+        </div>
+
+        <div class="woodboard" id="img21" style="grid-area: img21;">
+            <div class="shadow">
+                <img clas="centeredElement" src="https://img.itch.zone/aW1hZ2UvMTQ0Mjg4Ni84NjgxMDE1LnBuZw==/original/cwZTHB.png" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class="woodboard descriptionBoard" id="p22" style="grid-area: p22;">
+            <p>Dans Colin of Duty, le joueur contrôle Pascal Colin (notre professeur de BDD) qui doit  une armée de clone d’un étudiant de notre groupe en courant à travers les couloirs du bâtiment informatique.</p>
+            <p> Le jeu est très inspiré par Doom, cela se voit dans l’HUD, décoré d’un visage animé de notre vedette, dans le level design ou la progression se fait par l’obtention de clé, et dans la musique et le sound design, repris en grande partie du projet open-source Freedoom. 
+                Nous avons également pris une inspiration de Sonic The Hedgehog pour offrir un système de vie permissif permettant un jeu rapide et ininterrompu, ainsi que dans le jeu du Simon pour nos mini-jeu. </p>
+        </div>
+
+        <div class="woodboard" id="img21" style="grid-area: img22;">
+            <div class="shadow">
+                <img clas="centeredElement" src="https://img.itch.zone/aW1hZ2UvMTQ0Mjg4Ni84NjgxMDE5LnBuZw==/original/%2FCM1NZ.png" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class="woodboard descriptionBoard" id="p23" style="grid-area: p23;">
+            <p>Colin of Duty est pensé comme un hommage, un petit-jeu dans lequel on peut se plonger pour s’amuser de son ridicule assumé, puis penser ou repenser aux heures d’amphis et de travaux dirigés qui nous ont formés et apportés des souvenirs impérissables. Nous avons pu compter sur le soutiens de plusieurs de nos professeurs qui ont acceptés de prêter leurs voix et leur image, ce qui fait de ce projet un souvenir de notre diplôme et de nos années de vies étudiantes associés.</p>
+            <p> Le jeu possède également des « cheats codes » permettant de progresser plus facilement, ces derniers sont distribués dans 2 PDF fournis avec le jeu (un en français et un anglais) : des version retouchés d’anciens magazines d’astuces de jeux vidéos.</p>
+        </div>
+
+        <div class="woodboard" id="img23" style="grid-area: img23;">
+            <div class="shadow">
+                <img class="centeredElement" src="https://img.itch.zone/aW1hZ2UvMTQ0Mjg4Ni84NjgxMDE3LnBuZw==/original/Ky60rs.png" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class="woodboard" id="img24" style="grid-area: img24;">
+            <div class="shadow">
+                <img class="centeredElement" src="https://cdn.discordapp.com/attachments/523195050994171913/968963334969888768/PDFColinOfDuty.png" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class="woodboard" id="img25" style="grid-area: img25;">
+            <div class="shadow">
+                <img class="centeredElement" src="https://img.itch.zone/aW1hZ2UvMTQ0Mjg4Ni84NjgxMDE2LnBuZw==/original/agdAXU.png" data-zoomable/>  
+            </div>
+        </div>
+
+
+        <div class="spaceBetweenGames" style="grid-area:whitespace2"></div>
+
+
+        <div class='woodboard titleBoard' id="SpreadOut" style='grid-area: titre3;'>
+            <h1>Spread Out</h1>
+        </div>
+
+        <div class="woodboard descriptionBoard" id="p31" style="grid-area: p31;">
+            <p>Spread Out est un jeu de stratégie pensé par M. Paul Lahmy.</p>
+            <p>Ce dernier à produit un document complet où il détail les règles de son jeu à mi-chemin entre le go et les échecs. Puis il à contacté notre IUT ce qui nous à permis, 4 étudiants et moi-même, d’adapter son idée en jeu vidéo pour notre projet tutoré de 2ème année de DUT.</p>
+            <p>Le jeu, qui est encore en développement, se joue en multijoueur en ligne via Steam. Je me suis occupé de la partie multijoueur réseau. Les 2 adversaires se connecte via l’interface de Steam, et le jeu se sert ainsi de l’API mise à disposition par Valve pour connecter les clients en Peer-to-peer. Les joueurs se retrouvent dans un lobby, où ils peuvent modifier la carte et les règles, avant de commencer une partie.</p>
+        </div>
+
+        <div class="woodboard" id="img31" style="grid-area: img31;">
+            <div class="shadow">
+                <img clas="centeredElement" src="img/SpreadOut/lobbymulti.jpg" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class="woodboard descriptionBoard" id="p32" style="grid-area: p32;">
+            <p>Le jeu se joue au tour par tour et découpe en 2 phases : 
+                <ul>
+                    <li>
+                        Lors de la première phase, les joueurs doivent placer un pion à tour de rôle jusqu’à ce que toutes leurs unités soient posés. 
+                    </li>
+                    <li>
+                        Lors de la seconde phase, les joueurs doivent déplacer leurs unités pour tuer celles de l’adversaire, ou conquérir des territoires, délimités par des frontières sur la carte. 
+                    </li>
+                </ul>
+            </p>
+            <p>
+                Pour tuer une unité, il faut l’encercler en ayant 2 de ses pions au contact, sans qu’ils soient adjacents entre eux.
+            </p>
+            <p>Il existe plusieurs types d’unités : 
+                <ul>
+                    <li>
+                        Le sorcier, qui peut se poser sur les cases plaines et forêts, et empêches par sa présence sur un territoire sa conquête par l’adversaire.      
+                    </li>
+                    <li>
+                        Le cavalier, qui ne peut se poser que sur les plaines, et peut, si aucun cavalier ou sorcier adverse n’est dessus, conquérir un territoire.       
+                    </li>
+                    <li>
+                        Le griffon, qui peut se poser sur toutes les cases, et peut se déplacer 2 fois plus loin que les unités terrestres.
+                    </li>
+                    <li>
+                        Le roi-griffon, qui fonctionne comme un griffon mais peut conquérir des territoires et dont la mort représente la défaite du joueur.        </li>
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="woodboard" id="img32" style="grid-area: img32;">
+            <div class="shadow">
+                <img clas="centeredElement" src="img/SpreadOut/SchemaMortOuPas.png" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class="woodboard descriptionBoard" id="p33" style="grid-area: p33;">
+            <p>Les territoires ainsi conquit permettent de gagner des points pouvant acheter des unités supplémentaires. De plus, si un joueur acquiert un certain nombre de territoires (modifiables dans le lobby mais de 5 territoires sur 9 par défaut)il remporte la partie. </p>
+            <p>Des règles de placement et de déplacement viennent complexifier la partie, et la bataille est accompagnés d’effets sonores et d’une musique changeant en fonction de l’armée ayant l’avantage. Les graphismes ont été réalisés par une graphiste engagée pour Paul Lahmy.</p>
+            <p>Je me suis occupé de la partie réseau, de l’intégration Steam, et des algorithme de calculs des distances et déplacement et de la conquête de territoires. </p>
+        </div>
+
+        <div class="woodboard" id="img33" style="grid-area: img33;">
+            <div class="shadow">
+                <img class="centeredElement" src="img/SpreadOut/deployment.jpg" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class="woodboard" id="img34" style="grid-area: img34;">
+            <div class="shadow">
+                <img class="centeredElement" src="img/SpreadOut/movement.jpg" data-zoomable/>  
+            </div>
+        </div>
+
+        <div class='woodboard' id="links" style="grid-area:links;margin-top:20vh;">
+            <h2 class='sectionTitle'>Pour aller plus loin</h2>
+            <a href="/index.html" style="width: 100%; ">
+                <div class='pdFlex' style="margin-top: 20px;">                 
+                    <p>Ma page personelle (en anglais)</p>   
+                </div>
+            </a>
+
+            <a href="https://pordrack.itch.io"  target="_blank" style="width: 100%;">
+                <div class='pdFlex' id="itchIoLink" style="margin-top: 20px;">                 
+                    <img src='img/itchio-textless-white.svg' class='icon'>
+                    <p>Ma page itch.io</p>   
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="whitespace"></div>
+    <footer id="footer">&copy; Jérémy Auclair - 2022</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+    <script>
+        mediumZoom('[data-zoomable]',{
+            background:'#5b4c29'
+        });
+    </script>
+    <script src='menuFlipper.js'></script>
+    <script src='mainCanva.js'></script>
+    <script src='backgrounds.js'></script>
+    <script src="konami.js"></script>
+</body>
+
+</html>

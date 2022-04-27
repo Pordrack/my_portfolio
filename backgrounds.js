@@ -111,13 +111,14 @@ function Background(node){
         
         _this.onResize();
 
-        setTimeout(function(){
-            _this.onResize
-        },600)
-
-        setTimeout(function(){
-            _this.onResize
-        },3000)
+        for (let index = 0; index < 10; index++) {
+            setTimeout(function(){
+                for (const pb of plankBackgrounds) {
+                    _this.onResize();
+                    console.log("rappel");
+                }
+            },index*300);
+        }
     })
 }
 
@@ -133,24 +134,16 @@ plankImage.addEventListener("load",function(){
         plankBackgrounds.push(new Background(woodboard,plankImage));
     }
     //On s'assure que tout soit toujours aux bonne dimension pour la page
-    window.addEventListener("resize",function(event){    
-        //On appel la fonction a declenché sur le resize de chaque fond
-        for (const pb of plankBackgrounds) {
-            pb.onResize();
-        }
-        //On la rappelle après un petit temps pour que tout sois bien
-        setTimeout(function(){
-            for (const pb of plankBackgrounds) {
-                pb.onResize();
-            }
-        },300)         
-        
+    window.addEventListener("resize",function(event){           
         //On la rappelle après un petit temps pour que tout sois VRAIMENT bien
-        setTimeout(function(){
-            for (const pb of plankBackgrounds) {
-                pb.onResize();
-            }
-        },600)
+        for (let index = 0; index < 10; index++) {
+            setTimeout(function(){
+                for (const pb of plankBackgrounds) {
+                    pb.onResize();
+                    console.log("rappel");
+                }
+            },index*300);
+        }
         
         //Sans tous ces rappels : petit decalage possible
     })
