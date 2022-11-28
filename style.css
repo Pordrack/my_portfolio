@@ -277,6 +277,13 @@ canvas {
   row-gap: 30px;
   grid-template-areas:
     ". banner banner banner banner banner ."
+    ". titre4 titre4 titre4 titre4 titre4 ."
+    ". p41 p41 p41 img41 img41 ."
+    ". img42 img42 p42 p42 p42 ."
+    ". p43 p43 p43 img43 img43 ."
+    
+    ". . . whitespace4 . . ."
+
     ". titre1 titre1 titre1 titre1 titre1 ."
     ". p11 p11 p11 img11 img11 ."
     ". img12 img12 p12 p12 p12 ."
