@@ -19,24 +19,24 @@
     <img id="keysprite" class='hidden' src='img/key.png'>
     <img id="menuFlipper" class='flipped' src='img/flipperOnWood.png'>
     <div id="menu" class="hidden">
+        <a href="#HighlightedProjects">
+            <div>
+                <h2>Projets</h2>
+            </div>
+        </a>
         <a href="#GlitchOfFear">
             <div>
-                <h2>Glitch of Fear</h2>
+                <h2>Glitch of Fear - Détails</h2>
             </div>
         </a>
         <a href="#MushroomsOfTheEnd">
             <div>
-                <h2>Mushrooms of the end</h2>
+                <h2>Mushrooms of the end - Détails</h2>
             </div>
         </a>
         <a href="#ColinOfDuty">
             <div>
-                <h2>Colin of Duty</h2>
-            </div>
-        </a>
-        <a href="#SpreadOut">
-            <div>
-                <h2>Spread Out</h2>
+                <h2>Colin of Duty - Détails</h2>
             </div>
         </a>
 
@@ -59,14 +59,14 @@
             </div>
         </div>
 
+        <div id="HighlightedProjects" style='grid-area: highlightedProjects;'>
+            
+        </div>
+
+        <div class="spaceBetweenGames" style="grid-area:whitespace2"></div>
 
         <div class='woodboard titleBoard' id="GlitchOfFear" style='grid-area: titre4;'>
-            <h1>Glitch of Fear</h1>
-            <div class="iframe-container shadow" style="width:100%; padding-top: 28.9855%;">
-                <!-- Voir project.js pour comment j'ai obtenu cette valeur (normalement elle est calculée) -->
-                <iframe style="height:100%" src="https://itch.io/embed/1740011?dark=true" class="centeredElement" allowfullscreen="">
-                </iframe>
-            </div>
+            <h1>Glitch of Fear - Détails</h1>
         </div>
 
         <div class="woodboard descriptionBoard" id="p41" style="grid-area: p41;">
@@ -110,12 +110,7 @@
 
 
         <div class='woodboard titleBoard' id="MushroomsOfTheEnd" style='grid-area: titre1;'>
-            <h1>Mushrooms of the end</h1>
-            <div class="iframe-container shadow" style="width:100%; padding-top: 28.9855%;">
-                <!-- Voir project.js pour comment j'ai obtenu cette valeur (normalement elle est calculée) -->
-                <iframe style="height:100%" src="https://itch.io/embed/1471985?dark=true" class="centeredElement" allowfullscreen="">
-                </iframe>
-            </div>
+            <h1>Mushrooms of the end - Détails</h1>
         </div>
 
         <div class="woodboard descriptionBoard" id="p11" style="grid-area: p11;">
@@ -157,12 +152,7 @@
 
 
         <div class='woodboard titleBoard' id="ColinOfDuty" style='grid-area: titre2;'>
-            <h1>Colin of Duty</h1>
-            <div class="iframe-container shadow" style="width:100%; padding-top: 28.9855%;">
-                <!-- Voir project.js pour comment j'ai obtenu cette valeur (normalement elle est calculée) -->
-                <iframe style="height:100%" src="https://itch.io/embed/1442886?dark=true" class="centeredElement" allowfullscreen="">
-                </iframe>
-            </div>
+            <h1>Colin of Duty - Détails</h1>
         </div>
 
         <div class="woodboard descriptionBoard" id="p21" style="grid-area: p21;">
@@ -229,7 +219,9 @@
         </div>
     </div>
     <div class="whitespace"></div>
-    <footer id="footer">&copy; Jérémy Auclair - 2022</footer>
+    <footer id="footer">&copy; Jérémy Auclair - 2023</footer>
+
+    <script src="highlightedProjects.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
     <script>
@@ -237,6 +229,7 @@
             background:'#5b4c29'
         });
     </script>
+    
     <script src='menuFlipper.js'></script>
     <script src='mainCanva.js'></script>
     <script src='backgrounds.js'></script>

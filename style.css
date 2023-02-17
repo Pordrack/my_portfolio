@@ -276,7 +276,13 @@ canvas {
 .highlights-container {
   row-gap: 30px;
   grid-template-areas:
-    ". banner banner banner banner banner ."
+  ". banner banner banner banner banner ."
+
+    " . highlightedProjects highlightedProjects highlightedProjects highlightedProjects highlightedProjects . "
+
+    ". . . whitespace2 . . ."
+
+    
     ". titre4 titre4 titre4 titre4 titre4 ."
     ". p41 p41 p41 img41 img41 ."
     ". img42 img42 p42 p42 p42 ."
@@ -299,6 +305,38 @@ canvas {
 
     ". . links links links .   ."
     ;
+}
+
+/*La grille pour chacun des sous projets*/
+.highlightProject-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 10px;
+  row-gap: 30px;
+  margin-bottom: 90px;
+}
+
+.highlightProject-container.odd {
+  grid-template-areas:
+  " header header header . links"
+    "p p p img img"
+    ;
+}
+
+.highlightProject-container.even {
+  grid-template-areas:
+  " header header header . links"
+    "img img p p p"
+    ;
+}
+
+.highlightProject-container > .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
 }
 
 /*D'autres modifications locales sont égalemnt de rigueur*/
