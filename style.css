@@ -319,14 +319,14 @@ canvas {
 
 .highlightProject-container.odd {
   grid-template-areas:
-  " header header header . links"
+  " header header header header links"
     "p p p img img"
     ;
 }
 
 .highlightProject-container.even {
   grid-template-areas:
-  " header header header . links"
+  " header header header header links"
     "img img p p p"
     ;
 }
@@ -337,6 +337,10 @@ canvas {
   justify-content: center;
   align-items: center;
   gap:10px;
+}
+
+.description > a {
+  text-decoration-line: underline !important; 
 }
 
 /*D'autres modifications locales sont égalemnt de rigueur*/

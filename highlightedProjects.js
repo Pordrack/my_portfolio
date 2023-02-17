@@ -42,6 +42,17 @@ let projects=[
             "Je me suis occupé de la majorité du code et du projet Unity, incluant le système de ragdolls, les mini-jeux de Simon-like, le comportement des ennemis et les effets de post-processing."
         ]
     },
+    {
+        'name':'Intranet Meggitt Archamps',
+        'date':'2022-06-19',
+        
+        'image':'img/highlightedProjects/intranet.png',
+        'description':[
+            "J'ai fait un stage de 3 mois à <a href=\"https://www.meggittsensorex.fr/\">Meggitt Archamps</a> en tant que développeur web fullstack pour le framework C# <a href=\"https://fr.wikipedia.org/wiki/ASP.NET\">ASP.NET.</a>",
+            "J'y ai amélioré le module d'Intranet permettant de partager des communications, notamment en y ajoutant un éditeur d'image intégré développé from scratch. ",
+            "Après cela j'ai ajouté un module permettant de réserver et consulter ses repas à la cantine, ainsi que d'échanger ses repas entre collègues en cas de désistement/besoin de dernière minute."
+        ]
+    },
 ]
 
 let i=0;
@@ -77,6 +88,7 @@ for (let project of projects) {
     links.classList.add("woodboard")
     links.classList.add("links")
     links.style="grid-area: links; padding-bottom:3%;"
+    let emptyLinks=true;
 
     if(project.link!=null){
         let link=document.createElement("a");
@@ -84,6 +96,7 @@ for (let project of projects) {
         link.innerHTML="<h3>Lien</h3>";
         link.classList.add("centeredElement");
         links.appendChild(link);
+        emptyLinks=false;
     }
 
     if(project.sourceCode!=null){
@@ -92,6 +105,7 @@ for (let project of projects) {
         sourceLink.innerHTML="<h3>Code source</h3>";
         sourceLink.classList.add("centeredElement");
         links.appendChild(sourceLink);
+        emptyLinks=false;
     }
 
     if(project.moreDetails!=null){
@@ -100,9 +114,12 @@ for (let project of projects) {
         moreDetailsLink.innerHTML="<h3>Plus de détails</h3>";
         moreDetailsLink.classList.add("centeredElement");
         links.appendChild(moreDetailsLink);
+        emptyLinks=false;
     }
 
-    projectBoard.appendChild(links);
+    if(!emptyLinks){
+        projectBoard.appendChild(links);
+    }
 
     //Et les paragraphes de sa description (si il en a une)
     if(project.description!=null){
