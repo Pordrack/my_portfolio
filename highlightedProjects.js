@@ -70,7 +70,6 @@ let projects=[
         'date':'2022-03-19',
         'link':'https://pordrack.github.io/languageAutomate/',
         'sourceCode':'https://github.com/Pordrack/languageAutomate',
-        'tinyimg':true,
 
         'image':'img/highlightedProjects/automata.png',
         'description':[
