@@ -331,6 +331,20 @@ canvas {
     ;
 }
 
+.highlightProject-container.odd.tinyimg {
+  grid-template-areas:
+  " header header header header links"
+    "p p p p img"
+    ;
+}
+
+.highlightProject-container.even.tinyimg {
+  grid-template-areas:
+  " header header header header links"
+    "img p p p p"
+    ;
+}
+
 .highlightProject-container > .links {
   display: flex;
   flex-direction: column;
