@@ -50,7 +50,8 @@ let projects=[
         'description':[
             "J'ai fait un stage de 3 mois à <a href=\"https://www.meggittsensorex.fr/\">Meggitt Archamps</a> en tant que développeur web fullstack pour le framework C# <a href=\"https://fr.wikipedia.org/wiki/ASP.NET\">ASP.NET.</a>",
             "J'y ai amélioré le module d'Intranet permettant de partager des communications, notamment en y ajoutant un éditeur d'image intégré développé from scratch. ",
-            "Après cela j'ai ajouté un module permettant de réserver et consulter ses repas à la cantine, ainsi que d'échanger ses repas entre collègues en cas de désistement/besoin de dernière minute."
+            "Après cela j'ai ajouté un module permettant de réserver et consulter ses repas à la cantine, ainsi que d'échanger ses repas entre collègues en cas de désistement/besoin de dernière minute.",
+            "Les modules ont été réalisé sous la tutelle de mon maître de stage et selon les demandes et retours des employés concerné. Cela m'as appris comment fonctionne une hiérarchie, comment faire de bonnes réunions, et comment contenter des utilisateurs exigeants et pas forcément baignés dans l'informatique."
         ]
     },
 
@@ -75,6 +76,7 @@ let projects=[
         'image':'img/highlightedProjects/automata.png',
         'description':[
             "Cette application web programmée en JavaScript from scratch génère des <a href=\"https://fr.wikipedia.org/wiki/Automate_fini_d%C3%A9terministe\">automates finis déterministes</a> à partir d'<a href=\"https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re\">expressions régulières</a> entrées par l'utilisateur. Il peut ensuite écrire des mots et voir l'automate les analyser en direct.",
+            "Ce projet m'a permis de me familiariser avec les automates finis déterministes, le parsing, et d'autres notions liées aux langages formels."
         ]
     },
 
@@ -88,6 +90,7 @@ let projects=[
         'image':'img/highlightedProjects/endless.png',
         'description':[
             "Réalisé seul et en 48h pour la Global Game Jam 2021 (thème \"Lost and Food\"), ce jeu  inspiré par l'<a href=\"https://www.abandonware-france.org/ltf_abandon/ltf_jeu.php?id=1696\">Arche du Captain Blood</a> propose de parcourir un univers généré pour croiser les informations des PNJ et retrouver la planète de son parent. Il a été programmé en utilisant le moteur <a href=\"https://fr.wikipedia.org/wiki/Pico-8\">Pico 8</a> qui possède des restrictions inspirées par l'ère 8 bits.",
+            "Le projet m'a permis d'utiliser un moteur atypique que j'aime bien, non pas pour les performances et possibilité qu'il propose, mais pour le fun qu'il ajoute à la programmation. J'ai également pu m'essayer à la génération procédurale avec la construction d'univers uniques à chaque partie."
         ]
     },
 
@@ -99,6 +102,7 @@ let projects=[
         'image':'img/highlightedProjects/eliatrope.png',
         'description':[
             "Réalisé seul, ce jeu de plateforme basé sur l'univers du MMORPG <a href=\"https://fr.wikipedia.org/wiki/Wakfu_(jeu_vid%C3%A9o)\">Wakfu</a> (dont il est un fangame) permet au joueur de courir, sauter, placer des portails de téléportation et attaquer des monstres. Un système de création/utilisation de macros pour les placements de portails est également présent. Le jeu a été réalisé sur le moteur minimaliste <a href=\"https://fr.wikipedia.org/wiki/L%C3%96VE\">Love2D</a>. Sa physique a donc été programmée from scratch.",
+            "Le projet m'a donc permis de mieux comprendre comment fonctionne la physique d'un moteurs, et comment faire une physique satisfaisante pour un jeu de plateforme et d'action. Je me suis rendu compte qu'au final, pour être amusante, cette dernière devait ignorer ou déformer nombres de lois physiques de notre univers."
         ]
     },
 ]
